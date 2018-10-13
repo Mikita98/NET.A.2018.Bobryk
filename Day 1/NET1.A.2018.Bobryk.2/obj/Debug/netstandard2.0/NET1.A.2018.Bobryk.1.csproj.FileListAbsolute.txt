@@ -1,0 +1,9 @@
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\bin\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.deps.json
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\bin\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.dll
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\bin\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.pdb
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\obj\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.csprojAssemblyReference.cache
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\obj\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.csproj.CoreCompileInputs.cache
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\obj\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.AssemblyInfoInputs.cache
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\obj\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.AssemblyInfo.cs
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\obj\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.dll
+D:\Visual Studio Projects\NET1.A.2018.Bobryk.2\NET1.A.2018.Bobryk.2\obj\Debug\netstandard2.0\NET1.A.2018.Bobryk.1.pdb
