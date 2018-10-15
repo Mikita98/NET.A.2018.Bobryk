@@ -37,17 +37,11 @@ namespace Sorting.Tests
         [TestMethod]
         public void QuickSortingMethod_BigUnsortedArray_ReturnSortedArray()
         {
-            // Arrange
-            int[] actual = new int[10000000];
-            int[] expected = new int[10000000];
-            Random rnd = new Random();
-            for (int i = 0; i < 10000000; i++)
-            {
-                actual[i] = rnd.Next(-1000, 1000);
-            }
-
-            Array.Copy(actual, expected, actual.Length);
-            Array.Sort(expected);
+            int length = 10000000;
+            int[] actual = new int[length];
+            int[] expected = new int[length];
+            FillArray(actual);
+            CopyExpectedArray(actual, expected);
 
             // Act
             QuckMergeSort.Sorting.QuickSort(actual, 0, actual.Length - 1);
@@ -60,16 +54,11 @@ namespace Sorting.Tests
         public void MergeSortingMethod_BigUnsortedArray_ReturnSortedArray()
         {
             // Arrange
-            int[] actual = new int[10000000];
-            int[] expected = new int[10000000];
-            Random rnd = new Random();
-            for (int i = 0; i < 10000000; i++)
-            {
-                actual[i] = rnd.Next(-1000, 1000);
-            }
-
-            Array.Copy(actual, expected, actual.Length);
-            Array.Sort(expected);
+            int length = 10000000;
+            int[] actual = new int[length];
+            int[] expected = new int[length];
+            FillArray(actual);
+            CopyExpectedArray(actual, expected);
 
             // Act
             QuckMergeSort.Sorting.MergeSort(actual, 0, actual.Length - 1);
@@ -104,6 +93,21 @@ namespace Sorting.Tests
 
             // Assert
             CollectionAssert.AreEqual(expected, actual);
+        }
+
+        private static void FillArray(int[] array)
+        {
+            Random rnd = new Random();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = rnd.Next(-1000, 1000);
+            }
+        }
+
+        private static void CopyExpectedArray(int[] array1, int[] array2)
+        {
+            Array.Copy(array1, array2, array1.Length);
+            Array.Sort(array2);
         }
     }
 }

@@ -24,6 +24,34 @@ namespace QuickMergeSort.NUnitTest
             CollectionAssert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void MergeSortingMethod_LittleUnsortedArrayWithoutStartAndEndIndex_ReturnSortedArray()
+        {
+            // Arrange
+            int[] actual = new[] { 5, 7, 8, 1, 9 };
+            int[] expected = new[] { 1, 5, 7, 8, 9 };
+
+            // Act
+            QuckMergeSort.Sorting.MergeSort(actual);
+
+            // Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void QuickSortingMethod_LittleUnsortedArrayWithoutStartAndEndIndex_ReturnSortedArray()
+        {
+            // Arrange
+            int[] actual = new[] { 5, 7, 8, 1, 9 };
+            int[] expected = new[] { 1, 5, 7, 8, 9 };
+
+            // Act
+            QuckMergeSort.Sorting.QuickSort(actual);
+
+            // Assert
+            CollectionAssert.AreEqual(expected, actual);
+        }
+
         public void QuickSortingMethod_LittleUnsortedArray_ReturnSortedArray()
         {
             // Arrange

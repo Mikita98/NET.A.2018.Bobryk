@@ -1,10 +1,14 @@
 <stylecopresultscache>
   <version>12</version>
+  <project key="-1763867846">
+    <configuration>
+    </configuration>
+  </project>
   <sourcecode name="Sorting.cs" parser="StyleCop.CSharp.CsParser">
     <timestamps>
       <styleCop>2018/10/12 22:11:35.892</styleCop>
       <settingsFile>2018/10/12 22:50:15.618</settingsFile>
-      <sourceFile>2018/10/13 22:25:19.434</sourceFile>
+      <sourceFile>2018/10/15 22:22:34.850</sourceFile>
       <parser>2018/10/12 22:11:35.892</parser>
       <StyleCop.CSharp.DocumentationRules>2018/10/12 22:11:35.892</StyleCop.CSharp.DocumentationRules>
       <StyleCop.CSharp.DocumentationRules.FilesHashCode>1771534095</StyleCop.CSharp.DocumentationRules.FilesHashCode>
@@ -23,8 +27,4 @@
     </timestamps>
     <violations />
   </sourcecode>
-  <project key="-1763867846">
-    <configuration>
-    </configuration>
-  </project>
 </stylecopresultscache>

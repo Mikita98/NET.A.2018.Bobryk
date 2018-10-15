@@ -3,9 +3,9 @@
 namespace QuckMergeSort
 {
     /// <summary>
-    /// This is Sorting class that incules MergeSort and QuickSort
+    /// This is Sorting class that includes MergeSort and QuickSort
     /// </summary>
-    public class Sorting
+    public static class Sorting
     {
         /// <summary>
         /// The MergeSort method.
@@ -21,23 +21,41 @@ namespace QuckMergeSort
         /// </param>
         public static void MergeSort(int[] arr, int start, int end)
         {
+            if (arr == null)
+            {
+                throw new ArgumentNullException(nameof(arr));
+            }
+
+            if ((arr.Length == 1) || ((start == 0) && (end == 0)) || (start == end))
+            {
+                return;
+            }
+
+            if (start > end)
+            {
+                throw new ArgumentOutOfRangeException(nameof(arr));
+            }
+
+            Merge(arr, start, end);
+        }
+
+        public static void MergeSort(int[] arr)
+        {
+            if (arr == null)
+            {
+                throw new ArgumentNullException(nameof(arr));
+            }
+
             if (arr.Length == 1)
             {
                 return;
             }
 
-            if (start < end)
-            {
-                int middle = (start + end) / 2;
-                MergeSort(arr, start, middle);
-                MergeSort(arr, middle + 1, end);
-                MergeHalves(arr, start, middle, end);
-            }
+            Merge(arr, 0, arr.Length - 1);
         }
 
-
         /// <summary>
-        /// The QuickSort method.
+        /// The QuickSort method, using quicksorting method. From start point to end point.
         /// </summary>
         /// <param elements>
         /// The source array.
@@ -50,7 +68,33 @@ namespace QuckMergeSort
         /// </param>
         public static void QuickSort(int[] elements, int left, int right)
         {
-            if(elements == null)
+            if (elements == null)
+            {
+                throw new ArgumentNullException(nameof(elements));
+            }
+
+            if ((elements.Length == 1) || ((left == 0) && (right == 0)) || (left == right))
+            {
+                return;
+            }
+
+            if (left > right)
+            {
+                throw new ArgumentOutOfRangeException(nameof(elements));
+            }
+
+            Quick(elements, left, right);
+        }
+
+        /// <summary>
+        /// The QuickSort method, using quicksorting method. Sort al array
+        /// </summary>
+        /// <param elements>
+        /// The source array.
+        /// </param>
+        public static void QuickSort(int[] elements)
+        {
+            if (elements == null)
             {
                 throw new ArgumentNullException(nameof(elements));
             }
@@ -59,7 +103,12 @@ namespace QuckMergeSort
             {
                 return;
             }
- 
+
+            Quick(elements, 0, elements.Length - 1);
+        }
+
+        private static void Quick(int[] elements, int left, int right)
+        {
             int i = left, j = right;
             int pivot = elements[(left + right) / 2];
 
@@ -87,12 +136,23 @@ namespace QuckMergeSort
 
             if (left < j)
             {
-                QuickSort(elements, left, j);
+                Quick(elements, left, j);
             }
 
             if (i < right)
             {
-                QuickSort(elements, i, right);
+                Quick(elements, i, right);
+            }
+        }
+
+        private static void Merge(int[] arr, int start, int end)
+        {
+            if (start < end)
+            {
+                int middle = (start + end) / 2;
+                Merge(arr, start, middle);
+                Merge(arr, middle + 1, end);
+                MergeHalves(arr, start, middle, end);
             }
         }
 
