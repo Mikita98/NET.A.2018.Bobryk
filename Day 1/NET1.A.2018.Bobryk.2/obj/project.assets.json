@@ -183,11 +183,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Visual Studio Projects\\NET.A.2018.Bobryk\\NET.A.2018.Bobryk\\Day 1\\NET1.A.2018.Bobryk.2\\QuickMergeSort.csproj",
+      "projectUniqueName": "D:\\Visual Studio Projects\\NET1.A.2018.Bobryk.2\\NET1.A.2018.Bobryk.2\\QuickMergeSort.csproj",
       "projectName": "QuickMergeSort",
-      "projectPath": "D:\\Visual Studio Projects\\NET.A.2018.Bobryk\\NET.A.2018.Bobryk\\Day 1\\NET1.A.2018.Bobryk.2\\QuickMergeSort.csproj",
+      "projectPath": "D:\\Visual Studio Projects\\NET1.A.2018.Bobryk.2\\NET1.A.2018.Bobryk.2\\QuickMergeSort.csproj",
       "packagesPath": "C:\\Users\\Никита\\.nuget\\packages\\",
-      "outputPath": "D:\\Visual Studio Projects\\NET.A.2018.Bobryk\\NET.A.2018.Bobryk\\Day 1\\NET1.A.2018.Bobryk.2\\obj\\",
+      "outputPath": "D:\\Visual Studio Projects\\NET1.A.2018.Bobryk.2\\NET1.A.2018.Bobryk.2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

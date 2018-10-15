@@ -50,11 +50,16 @@ namespace QuckMergeSort
         /// </param>
         public static void QuickSort(int[] elements, int left, int right)
         {
+            if(elements == null)
+            {
+                throw new ArgumentNullException(nameof(elements));
+            }
+
             if (elements.Length == 1)
             {
                 return;
             }
-
+ 
             int i = left, j = right;
             int pivot = elements[(left + right) / 2];
 
@@ -130,17 +135,16 @@ namespace QuckMergeSort
                 k++;
             }
 
-            while (i < leftlength)
-            {
-                array[k] = leftAr[i];
-                i++;
-                k++;
-            }
+            FilArray(ref k, ref i, leftlength, array, leftAr);
+            FilArray(ref k, ref j, rightlength, array, rightAr);
+        }
 
-            while (j < rightlength)
+        private static void FilArray(ref int k, ref int i, int length, int[] array, int[] halfArray)
+        {
+            while (i < length)
             {
-                array[k] = rightAr[j];
-                j++;
+                array[k] = halfArray[i];
+                i++;
                 k++;
             }
         }
