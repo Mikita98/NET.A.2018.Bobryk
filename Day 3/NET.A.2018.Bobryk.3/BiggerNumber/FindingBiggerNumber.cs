@@ -34,8 +34,15 @@ namespace BiggerNumber
                     array[min] = array[i];
                 }
             }
-
-            return number;
+            int result = ArraytoInt(array);
+            if (result < number)
+            {
+                return -1;
+            }
+            else
+            {
+                return result;
+            }
         }
 
             private static void CheckDigit(int number)
@@ -56,6 +63,25 @@ namespace BiggerNumber
             }
 
             return digitArray;
+        }
+
+        private static int ArraytoInt(int[] array)
+        {
+            int number = 0;
+            int power = 1;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == 0)
+                {
+                    number += power;
+                }
+                else
+                {
+                    number += power * array[i];
+                }
+                power *= 10;
+            }
+            return number;
         }
     }
 }
