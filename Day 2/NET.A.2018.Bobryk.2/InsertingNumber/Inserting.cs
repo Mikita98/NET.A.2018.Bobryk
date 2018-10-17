@@ -16,26 +16,31 @@ namespace InsertingNumber
 
         public static int InsertNumbers(int val1, int val2, int i, int j)
         {
-            if ((i > 31) || (i < 0) || (j > 31) || (j < 0) || (j < i))
+            CheckDigits(val1, val2, i, j);
+
+            int span = 2 << j - i;
+            int length = span - 1;
+            int bitMask = length << i;
+            int val2shift = val1 << i;
+            int number = (~bitMask & val1) | (bitMask & val2shift);
+            return number;
+        }
+
+        private static void CheckDigits(int val1, int val2, int i, int j)
+        {
+            if (i > j)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentException(nameof(i));
             }
-            else
+
+            if ((i > 31) || (i < 0))
             {
-                BitArray val_1 = new BitArray(new int[] { val1 });
-                BitArray val_2 = new BitArray(new int[] { val2 });
-                int p = 0;
+                throw new ArgumentException(nameof(i));
+            }
 
-                for (int t = i; t <= j; t++)
-                {
-                    val_2[t] = val_1[p];
-                    p++;
-                }
-
-                byte[] bytes = new byte[4];
-                val_2.CopyTo(bytes, 0);
-                int val3 = BitConverter.ToInt32(bytes, 0);
-                return val3;
+            if((j < 0) || (j > 31))
+            {
+                throw new ArgumentException(nameof(i));
             }
         }
     }

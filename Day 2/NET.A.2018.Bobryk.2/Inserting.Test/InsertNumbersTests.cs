@@ -7,12 +7,12 @@ namespace Inserting.Test
     public class InsertNumbersTests
     {
         [TestMethod]
-        public void InsertNumberMethod_OneAndTwo_3()
+        public void InsertNumberMethod_FifteenAndNine_Nine()
         {
             // Arrange
-            int expected = 3;
-            int val1 = 1;
-            int val2 = 2;
+            int expected = 9;
+            int val1 = 9;
+            int val2 = 15;
             int i = 0;
             int j = 0;
 
@@ -24,12 +24,12 @@ namespace Inserting.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void InsertNumberMethod_InvalidIndexI_ArgumentOutOfRangeException()
         {
             // Arrange
-            int val1 = 1;
-            int val2 = 2;
+            int val1 = 2;
+            int val2 = 1;
             int i = -1;
             int j = 0;
 
@@ -38,7 +38,7 @@ namespace Inserting.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void InsertNumberMethod_InvalidIndexJ_ArgumentOutOfRangeException()
         {
             // Arrange
@@ -52,7 +52,7 @@ namespace Inserting.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        [ExpectedException(typeof(ArgumentException))]
         public void InsertNumberMethod_InvalidIndexIBiggerJ_ArgumentOutOfRangeException()
         {
             // Arrange
@@ -66,27 +66,12 @@ namespace Inserting.Test
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void InsertNumberMethod_TwoValuesOne_One()
+        public void InsertNumberMethod_FifteenOneAndfiifteen_3()
         {
             // Arrange
-            int val1 = 1;
-            int val2 = 1;
-            int i = 1;
-            int j = 9;
-
-            // Act
-            int actual = InsertingNumber.Inserting.InsertNumbers(val1, val2, i, j);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void InsertNumberMethod_MinusOneAndTwo_3()
-        {
-            // Arrange
-            int expected = 3;
-            int val1 = -1;
-            int val2 = 2;
+            int expected = 15;
+            int val1 = 15;
+            int val2 = 15;
             int i = 0;
             int j = 0;
 

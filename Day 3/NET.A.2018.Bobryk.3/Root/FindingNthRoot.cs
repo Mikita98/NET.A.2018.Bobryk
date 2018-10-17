@@ -5,7 +5,7 @@ namespace Root
     /// <summary>
     /// FindingNthRoot Class that have method for find root from number
     /// </summary>
-    public class FindingNthRoot
+    public static class FindingNthRoot
     {
         /// <summary>
         /// InsertNumbers inserts bits from the first value into second value
