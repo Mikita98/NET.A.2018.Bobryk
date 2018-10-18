@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming", "Transforming\Transforming.csproj", "{03B8B33D-D199-4B25-8875-F3FE487EB971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming.NUTest", "Transforming.NUTest\Transforming.NUTest.csproj", "{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03B8B33D-D199-4B25-8875-F3FE487EB971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03B8B33D-D199-4B25-8875-F3FE487EB971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03B8B33D-D199-4B25-8875-F3FE487EB971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03B8B33D-D199-4B25-8875-F3FE487EB971}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54B0D4D0-7D2D-447F-AB1A-BBA04F39D5C3}
+	EndGlobalSection
+EndGlobal
