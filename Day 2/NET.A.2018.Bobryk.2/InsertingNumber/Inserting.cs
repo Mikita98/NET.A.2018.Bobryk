@@ -28,11 +28,6 @@ namespace InsertingNumber
 
         private static void CheckDigits(int val1, int val2, int i, int j)
         {
-            if (i > j)
-            {
-                throw new ArgumentException(nameof(i));
-            }
-
             if ((i > 31) || (i < 0))
             {
                 throw new ArgumentException(nameof(i));
@@ -40,7 +35,12 @@ namespace InsertingNumber
 
             if((j < 0) || (j > 31))
             {
-                throw new ArgumentException(nameof(i));
+                throw new ArgumentException(nameof(j));
+            }
+
+            if (i > j)
+            {
+                throw new ArgumentException(nameof(i),nameof(j));
             }
         }
     }

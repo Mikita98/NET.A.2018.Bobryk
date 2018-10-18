@@ -4,48 +4,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace BiggerNumber
-{
+{/// <summary>
+ /// FindingBiggerNumber Class that have method for find bigger number than yours
+ /// </summary>
     public static class FindingBiggerNumber
     {
+        /// <summary>
+        /// InsertNumbers inserts bits from the first value into second value
+        /// </summary>
+        /// <param name ="number">
+        /// Method find a number from digits that includes in that param
+        /// </param>
+        /// <returns>New number</returns>
         public static int FindNextBiggerNumber(int number)
         {
             CheckDigit(number);
 
-            string number_s = number.ToString();
-            int length = number_s.Length;
-            int[] array = IntToIntarray(number, length);
-            int max = array[array.Length - 1];
-            int min = array.Length - 1;
-            for (int i = array.Length - 1; i >= 0; i--)
-            {
-                if (array[i] > array[max])
-                {
-                    int temp = array[i];
-                    array[i] = array[min];
-                    array[min] = temp;
+            int[] array = IntToIntarray(number);
 
-                    Array.Sort(array, i - 2, array.Length - i + 1);
-                    break;
+            int index = FindIndex(array);
 
-                }
-                else if (array[i] < array[min])
-                {
-                    array[min] = array[i];
-                }
-            }
-            int result = ArraytoInt(array);
-            if (result < number)
+            if (index == -1)
             {
                 return -1;
             }
-            else
+
+            if (index < array.Length - 1)
             {
-                return result;
+                int temp = array[index];
+                array[index] = array[index + 1];
+                array[index + 1] = temp;
+                Array.Sort(array, index + 1, array.Length - index - 1);
             }
+
+            int result = ArraytoInt(array);
+            return result;
         }
 
-            private static void CheckDigit(int number)
+        private static int FindIndex(int[] temp)
+        {
+            for (int i = temp.Length - 1; i > 0; i--)
+            {
+                if (temp[i] > temp[i - 1])
+                {
+                    return (i - 1);
+                }
+            }
+            return -1;
+        }
+
+        private static void CheckDigit(int number)
             {
                 if (number < 0)
                 {
@@ -53,35 +63,29 @@ namespace BiggerNumber
                 }
             }
 
-        private static int[] IntToIntarray(int number, int length)
+        private static int[] IntToIntarray(int number)
         {
-            int[] digitArray = new int[length];
-            while (number != 0)
-            {
-                digitArray[0] = number % 10;
-                number /= 10;
-            }
+            var digits = new List<int>();
 
-            return digitArray;
+            for (; number != 0; number /= 10)
+                digits.Add(number % 10);
+
+            var arr = digits.ToArray();
+            Array.Reverse(arr);
+            return arr;
         }
 
         private static int ArraytoInt(int[] array)
         {
-            int number = 0;
-            int power = 1;
-            for (int i = 0; i < array.Length; i++)
+            String a = "";
+            int output;
+            foreach (int test in array)
             {
-                if (array[i] == 0)
-                {
-                    number += power;
-                }
-                else
-                {
-                    number += power * array[i];
-                }
-                power *= 10;
+                a += test.ToString();
             }
-            return number;
+            output = int.Parse(a);
+
+            return output;
         }
     }
 }
