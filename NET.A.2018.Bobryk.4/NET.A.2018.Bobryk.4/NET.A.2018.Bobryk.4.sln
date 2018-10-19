@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming", "Transformin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming.NUTest", "Transforming.NUTest\Transforming.NUTest.csproj", "{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString", "DoubleBitsToString\DoubleBitsToString.csproj", "{03CB5158-090E-495E-A8CF-ACF0E906FB9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString.NUTests", "DoubleBitsToString.NUTests\DoubleBitsToString.NUTests.csproj", "{7CC95ACC-9BF9-4659-A33B-B03DE8341437}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03CB5158-090E-495E-A8CF-ACF0E906FB9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CB5158-090E-495E-A8CF-ACF0E906FB9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CB5158-090E-495E-A8CF-ACF0E906FB9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CB5158-090E-495E-A8CF-ACF0E906FB9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
