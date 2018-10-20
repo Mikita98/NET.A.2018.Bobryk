@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString", "Doubl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString.NUTests", "DoubleBitsToString.NUTests\DoubleBitsToString.NUTests.csproj", "{7CC95ACC-9BF9-4659-A33B-B03DE8341437}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingGCD", "FindingGCD\FindingGCD.csproj", "{678DA3D3-5081-4ABB-B698-858B20F2F160}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingGCDTests", "FindingGCDTests\FindingGCDTests.csproj", "{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7CC95ACC-9BF9-4659-A33B-B03DE8341437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{678DA3D3-5081-4ABB-B698-858B20F2F160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{678DA3D3-5081-4ABB-B698-858B20F2F160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{678DA3D3-5081-4ABB-B698-858B20F2F160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{678DA3D3-5081-4ABB-B698-858B20F2F160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

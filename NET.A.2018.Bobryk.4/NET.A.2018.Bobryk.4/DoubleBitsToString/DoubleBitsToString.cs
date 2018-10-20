@@ -20,7 +20,7 @@ namespace DoubleBitsToString
         /// <returns>string of bits</returns>
         public static string DoubleToString(double number)
         {
-            if(number == 0.0)
+            if (number == 0.0)
             {
                 return "0000000000000000000000000000000000000000000000000000000000000000";
             }
@@ -58,7 +58,7 @@ namespace DoubleBitsToString
 
             double offset = Math.Pow(2, 52);
             string number_offset_s = string.Empty;
-            string e_s = String.Empty;
+            string e_s = string.Empty;
             double power = 0;
             if (number < 1)
             {
@@ -75,7 +75,8 @@ namespace DoubleBitsToString
                 number_offset_s = DoubleToBits(number_offset);
 
                 e_s = DoubleToBits(e);
-            }            
+            }        
+            
             string result = sign + e_s + number_offset_s;
 
             return result;
@@ -97,14 +98,14 @@ namespace DoubleBitsToString
         {
             double n = Math.Truncate(number);
             int i = 0;
-            while(n > 1)
+            while (n > 1)
             {
                 n = Math.Truncate(n / 2);
                 i++;
             }
+
             return i;
         }
-
 
         private static string FindOffset(double number)
         {
@@ -113,7 +114,7 @@ namespace DoubleBitsToString
             for (int i = 0; i < 52; i++)
             {
                 offset *= 2;
-                if(offset >= 1)
+                if (offset >= 1)
                 {
                     result += "1";
                     offset -= 1;
@@ -123,6 +124,7 @@ namespace DoubleBitsToString
                     result += "0";
                 }
             }
+
             return result; 
         }
 
