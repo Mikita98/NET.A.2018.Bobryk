@@ -23,13 +23,9 @@ namespace BiigerNumber.UT
         [TestCase(20, ExpectedResult = -1)]
         public int FindNextBiggerNumber(int number)
         {
-            //Act and Array
             int result = BiggerNumber.FindingBiggerNumber.FindNextBiggerNumber(number);
 
-            //Assert
             return result;
         }
-
-
     }
 }

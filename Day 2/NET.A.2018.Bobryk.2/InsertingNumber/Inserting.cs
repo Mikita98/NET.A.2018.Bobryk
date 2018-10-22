@@ -8,39 +8,39 @@ namespace InsertingNumber
         /// <summary>
         /// InsertNumbers inserts bits from the first value into second value
         /// </summary>
-        /// <param name ="val1"></param>
-        /// <param name ="val2"></param>
-        /// /// <param name ="i"></param>
-        /// /// <param name ="j"></param>
+        /// <param name ="value1"></param>
+        /// <param name ="value2"></param>
+        /// /// <param name ="left"></param>
+        /// /// <param name ="right"></param>
         /// <returns>New number</returns>
-
-        public static int InsertNumbers(int val1, int val2, int i, int j)
+        /// <exception cref="ArgumentException"></exception>
+        public static int InsertNumbers(int value1, int value2, int left, int right)
         {
-            CheckDigits(val1, val2, i, j);
+            CheckDigits(value1, value2, left, right);
 
-            int span = 2 << j - i;
+            int span = 2 << (left - right);
             int length = span - 1;
-            int bitMask = length << i;
-            int val2shift = val1 << i;
-            int number = (~bitMask & val1) | (bitMask & val2shift);
+            int bitMask = length << left;
+            int val2shift = value1 << left;
+            int number = (~bitMask & value1) | (bitMask & val2shift);
             return number;
         }
 
-        private static void CheckDigits(int val1, int val2, int i, int j)
+        private static void CheckDigits(int value1, int value2, int left, int right)
         {
-            if ((i > 31) || (i < 0))
+            if ((left > 31) || (left < 0))
             {
-                throw new ArgumentException(nameof(i));
+                throw new ArgumentException(nameof(left) + "is invallid left border. It must be between 0 and max bit and less then right border");
             }
 
-            if((j < 0) || (j > 31))
+            if ((right < 0) || (right > 31))
             {
-                throw new ArgumentException(nameof(j));
+                throw new ArgumentException(nameof(right) + "is invallid right border.It must be between 0 and max bit and bigger then left border");
             }
 
-            if (i > j)
+            if (left > right)
             {
-                throw new ArgumentException(nameof(i),nameof(j));
+                throw new ArgumentException(nameof(left), nameof(right) + "are invalid borders.Right border must be bigger than left border");
             }
         }
     }

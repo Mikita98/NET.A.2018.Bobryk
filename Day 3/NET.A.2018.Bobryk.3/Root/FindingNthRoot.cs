@@ -36,7 +36,7 @@ namespace Root
             while (Math.Abs(x1 - x0) > eps)
             {
                 x0 = x1;
-                x1 = (1 / n_double) * (((n_double - 1) * x0) + x / Power(x0, n - 1));
+                x1 = (1 / n_double) * (((n_double - 1) * x0) + (x / Power(x0, n - 1)));
             }
 
             return x1;
@@ -55,7 +55,7 @@ namespace Root
 
         private static void CheckDigits(int n, double x, double eps)
         {
-            if(n <= 0)
+            if (n <= 0)
             {
                 throw new ArgumentException(nameof(n));
             }

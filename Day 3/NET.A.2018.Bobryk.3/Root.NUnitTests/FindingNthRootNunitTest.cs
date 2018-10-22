@@ -22,22 +22,18 @@ namespace Root.NUnitTests
         [TestCase(0.004241979, 9, 0.00000001, 0.545)]
         public void FindNthRootTest_DataTable_ExpectedData(double number, int power, double eps, double expected)
         {
-            //Act
             double actual = FindingNthRoot.FindNthRoot(number, power, eps);
 
-            //Assert
             Assert.AreEqual(actual, expected, eps);
         }
 
         [Test]
         public void FindNthRootTest_MinusPower_ArgumentException()
         {
-            //Arrange
             double number = 0.001;
             int power = -2;
             double eps = 0.0001;
 
-            //Act and Assert
             Assert.Throws<ArgumentException>(() => 
                 FindingNthRoot.FindNthRoot(number, power, eps));
         }
@@ -45,12 +41,10 @@ namespace Root.NUnitTests
         [Test]
         public void FindNthRootTest_MinusNumber_ArgumentException()
         {
-            //Arrange
             double number = -0.01;
             int power = 2;
             double eps = 0.0001;
 
-            //Act and Assert
             Assert.Throws<ArgumentException>(() =>
                 FindingNthRoot.FindNthRoot(number, power, eps));
         }
@@ -58,12 +52,10 @@ namespace Root.NUnitTests
         [Test]
         public void FindNthRootTest_MinusEpsilon_ArgumentException()
         {
-            //Arrange
             double number = 0.01;
             int power = 2;
             double eps = -1;
 
-            //Act and Assert
             Assert.Throws<ArgumentException>(() =>
                 FindingNthRoot.FindNthRoot(number, power, eps));
         }
