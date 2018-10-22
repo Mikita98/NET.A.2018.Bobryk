@@ -5,15 +5,15 @@ VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming", "Transforming\Transforming.csproj", "{03B8B33D-D199-4B25-8875-F3FE487EB971}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming.NUTest", "Transforming.NUTest\Transforming.NUTest.csproj", "{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transforming.Test", "Transforming.NUTest\Transforming.Test.csproj", "{4AB8BA1C-36A1-44A6-8935-0B250D2F622B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString", "DoubleBitsToString\DoubleBitsToString.csproj", "{03CB5158-090E-495E-A8CF-ACF0E906FB9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString.NUTests", "DoubleBitsToString.NUTests\DoubleBitsToString.NUTests.csproj", "{7CC95ACC-9BF9-4659-A33B-B03DE8341437}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleBitsToString.Tests", "DoubleBitsToString.NUTests\DoubleBitsToString.Tests.csproj", "{7CC95ACC-9BF9-4659-A33B-B03DE8341437}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingGCD", "FindingGCD\FindingGCD.csproj", "{678DA3D3-5081-4ABB-B698-858B20F2F160}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingGCDTests", "FindingGCDTests\FindingGCDTests.csproj", "{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FindingGCD.Tests", "FindingGCDTests\FindingGCD.Tests.csproj", "{1F74BF29-FC2C-4C96-BB94-AD2449731B9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

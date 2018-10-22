@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DoubleBitsToString;
 
 namespace Transforming
 {
@@ -50,6 +51,12 @@ namespace Transforming
             }
 
             result = result.TrimEnd();
+            return result;
+        }
+
+        public static string DoubleToBits(double number)
+        {
+            string result = DoubleBitsToString.DoubleBitsToString.DoubleToString(number);
             return result;
         }
 

@@ -43,5 +43,11 @@
     <Compile Include="TransformingToWords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DoubleBitsToString\DoubleBitsToString.csproj">
+      <Project>{03cb5158-090e-495e-a8cf-acf0e906fb9b}</Project>
+      <Name>DoubleBitsToString</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

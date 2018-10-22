@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Diagnostics;
 
 namespace FindingGCD
 {
@@ -16,9 +16,9 @@ namespace FindingGCD
         /// Find GCD numbers from Euclid
         /// </summary>
         /// <param name ="numbers">
-        /// numbers that need to find gcd
+        /// numbers that need to find greatest common divisor
         /// </param>
-        /// <returns>time and gcd</returns>
+        /// <returns>time and greatest common divisor</returns>
         public static Tuple<int, int> Euclid_GCD(params int[] numbers)
         {
             CheckArray(numbers);
@@ -26,22 +26,22 @@ namespace FindingGCD
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
-            int GCD = Euclid(numbers);
+            int gcd = Euclid(numbers);
 
             timer.Stop();
 
             int time = timer.Elapsed.Milliseconds;
 
-            return Tuple.Create(GCD, time);
+            return Tuple.Create(gcd, time);
         }
 
         /// <summary>
         /// Find GCD numbers from Euclid
         /// </summary>
         /// <param name ="numbers">
-        /// numbers that need to find gcd
+        /// numbers that need to find greatest common divisor
         /// </param>
-        /// <returns>time and gcd</returns>
+        /// <returns>time and greatest common divisor</returns>
         public static Tuple<int, int> Stein_GCD(params int[] numbers)
         {
             CheckArray(numbers);
@@ -49,13 +49,13 @@ namespace FindingGCD
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
-            int GCD = Stein(numbers);
+            int gcd = Stein(numbers);
 
             timer.Stop();
 
             int time = timer.Elapsed.Milliseconds;
 
-            return Tuple.Create(GCD, time);
+            return Tuple.Create(gcd, time);
         }
 
         private static int Euclid(int num1, int num2)
@@ -88,6 +88,7 @@ namespace FindingGCD
                     num2 = num2 - num1;
                 }
             }
+
             return num1;
         }
 
@@ -113,39 +114,50 @@ namespace FindingGCD
             if ((~num1 & 1) != 0)
             {
                 if ((num2 & 1) != 0)
+                {
                     return Stein(num1 >> 1, num2);
+                }
                 else
+                {
                     return Stein(num1 >> 1, num2 >> 1) << 1;
+                }
             }
+
             if ((~num2 & 1) != 0)
+            {
                 return Stein(num1, num2 >> 1);
+            }
+
             if (num1 > num2)
+            {
                 return Stein((num1 - num2) >> 1, num2);
+            }
+
             return Stein((num2 - num1) >> 1, num1);
         }
 
         private static int Stein(params int[] numbers)
         {
-            int GDC = Stein(numbers[0], numbers[1]);
+            int gdc = Stein(numbers[0], numbers[1]);
 
             for (int i = 2; i < numbers.Length; i++)
             {
-                GDC = Stein(GDC, numbers[i]);
+                gdc = Stein(gdc, numbers[i]);
             }
 
-            return GDC;
+            return gdc;
         }
 
         private static int Euclid(params int[] numbers)
         {
-            int GDC = Euclid(numbers[0], numbers[1]);
+            int gdc = Euclid(numbers[0], numbers[1]);
 
             for (int i = 2; i < numbers.Length; i++)
             {
-                GDC = Euclid(GDC, numbers[i]);
+                gdc = Euclid(gdc, numbers[i]);
             }
 
-            return GDC;
+            return gdc;
         }
 
         private static void CheckArray(params int[] numbers)

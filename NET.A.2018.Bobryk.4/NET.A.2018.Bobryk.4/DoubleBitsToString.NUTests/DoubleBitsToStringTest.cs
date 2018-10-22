@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace DoubleBitsToString.NUTests
 {
     [TestFixture]
-    public class DoubleBitsToStringNUTest
+    public class DoubleBitsToStringTest
     {
         [TestCase(-255.255, ExpectedResult = "1100000001101111111010000010100011110101110000101000111101011100")]
         [TestCase(255.255, ExpectedResult = "0100000001101111111010000010100011110101110000101000111101011100")]

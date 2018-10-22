@@ -57,13 +57,13 @@ namespace DoubleBitsToString
             }
 
             double offset = Math.Pow(2, 52);
-            string number_offset_s = string.Empty;
-            string e_s = string.Empty;
+            string numberOffsetString = string.Empty;
+            string epsString = string.Empty;
             double power = 0;
             if (number < 1)
             {
-                e_s = "00000000000";
-                number_offset_s = FindOffset(number);
+                epsString = "00000000000";
+                numberOffsetString = FindOffset(number);
             }
             else
             {
@@ -71,13 +71,13 @@ namespace DoubleBitsToString
                 double twoInPower = Math.Pow(2, power);
                 double e = 1023 + power;
                 double location = (number - twoInPower) / twoInPower;
-                double number_offset = offset * location;
-                number_offset_s = DoubleToBits(number_offset);
+                double numberOffset = offset * location;
+                numberOffsetString = DoubleToBits(numberOffset);
 
-                e_s = DoubleToBits(e);
+                epsString = DoubleToBits(e);
             }        
             
-            string result = sign + e_s + number_offset_s;
+            string result = sign + epsString + numberOffsetString;
 
             return result;
         }
@@ -135,6 +135,7 @@ namespace DoubleBitsToString
             {
                 i--;
             }
+
             return i;
         }
 
@@ -150,16 +151,16 @@ namespace DoubleBitsToString
                 result_rev += remainder.ToString();
             }
 
-            char [] temp = result_rev.ToCharArray();
+            char[] temp = result_rev.ToCharArray();
             Array.Reverse(temp);
             string result = string.Empty; 
 
-            for(int i =0; i < result_rev.Length; i++)
+            for (int i = 0; i < result_rev.Length; i++)
             {
                 result += temp[i].ToString();
             }
+
             return result;
         }
-           
     }
 }

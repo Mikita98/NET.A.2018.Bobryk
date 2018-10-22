@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace Transforming.NUTest
 {
     [TestFixture]
-    public class TransformingToWordsNUTests
+    public class TransformingToWordsTests
     {
         [Test]
         [TestCase(-2.4, ExpectedResult = "minus two point four")]

@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace FindingGCDTests
 {
     [TestFixture]
-    public class FindingGCDNUTests
+    public class FindingGCDTests
     {
         [Test]
         [TestCase(1, 100, ExpectedResult = 1)]
@@ -18,8 +18,8 @@ namespace FindingGCDTests
         [TestCase(71, 25411681, ExpectedResult = 71)]
         public int EuclidGDC_ValidDataTwoArguments_ValidResult(int num1, int num2)
         {
-            Tuple<int,int> GDC = FindingGCD.FindingGCD.Euclid_GCD(num1, num2);
-            return GDC.Item1;
+            Tuple<int, int> gcd = FindingGCD.FindingGCD.Euclid_GCD(num1, num2);
+            return gcd.Item1;
         }
 
         [Test]
@@ -32,8 +32,8 @@ namespace FindingGCDTests
         [TestCase(71, 25411681, ExpectedResult = 71)]
         public int SteinGDC_ValidDataTwoArguments_ValidResult(int num1, int num2)
         {
-            Tuple<int, int> GDC = FindingGCD.FindingGCD.Stein_GCD(num1, num2);
-            return GDC.Item1;
+            Tuple<int, int> gcd = FindingGCD.FindingGCD.Stein_GCD(num1, num2);
+            return gcd.Item1;
         }
 
         [Test]
@@ -44,8 +44,8 @@ namespace FindingGCDTests
         [TestCase(71, 25411681, 5041, ExpectedResult = 71)]
         public int EuclidGDC_ValidDataThreeArguments_ValidResult(int num1, int num2, int num3)
         {
-            Tuple<int, int> GDC = FindingGCD.FindingGCD.Euclid_GCD(num1, num2, num3);
-            return GDC.Item1;
+            Tuple<int, int> gcd = FindingGCD.FindingGCD.Euclid_GCD(num1, num2, num3);
+            return gcd.Item1;
         }
 
         [Test]
@@ -58,8 +58,8 @@ namespace FindingGCDTests
         [TestCase(71, 25411681, 5041, ExpectedResult = 71)]
         public int SteinGDC_ValidDataThreeArguments_ValidResult(int num1, int num2, int num3)
         {
-            Tuple<int, int> GDC = FindingGCD.FindingGCD.Stein_GCD(num1, num2, num3);
-            return GDC.Item1;
+            Tuple<int, int> gcd = FindingGCD.FindingGCD.Stein_GCD(num1, num2, num3);
+            return gcd.Item1;
         }
 
         [Test]
@@ -70,8 +70,8 @@ namespace FindingGCDTests
         [TestCase(71, 25411681, 5041, 0, ExpectedResult = 71)]
         public int EuclidGDC_ValidDataFourArguments_ValidResult(int num1, int num2, int num3, int num4)
         {
-            Tuple<int, int> GDC = FindingGCD.FindingGCD.Euclid_GCD(num1, num2, num3, num4);
-            return GDC.Item1;
+            Tuple<int, int> gcd = FindingGCD.FindingGCD.Euclid_GCD(num1, num2, num3, num4);
+            return gcd.Item1;
         }
 
         [Test]
@@ -82,8 +82,8 @@ namespace FindingGCDTests
         [TestCase(71, 25411681, 5041, 0, ExpectedResult = 71)]
         public int SteinGDC_ValidDataFourArguments_ValidResult(int num1, int num2, int num3, int num4)
         {
-            Tuple<int, int> GDC = FindingGCD.FindingGCD.Stein_GCD(num1, num2, num3, num4);
-            return GDC.Item1;
+            Tuple<int, int> gcd = FindingGCD.FindingGCD.Stein_GCD(num1, num2, num3, num4);
+            return gcd.Item1;
         }
 
         [TestCase]
