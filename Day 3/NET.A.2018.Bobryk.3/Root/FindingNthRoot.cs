@@ -20,49 +20,38 @@ namespace Root
         /// Accuracy for root
         /// </param>
         /// <returns>New number</returns>
-        public static double FindNthRoot(double x, int n, double eps)
+        /// /// <exception cref="ArgumentException"></exception>
+        public static double FindNthRoot(double number, int power, double eps)
         {
-            CheckDigits(n, x, eps);
+            CheckDigits(power, number, eps);
 
-            if (n == 1)
+            if (power == 1)
             {
-                return x;
+                return number;
             }
 
-            double n_double = (double)n;
-            double x0 = x / n_double;
-            double x1 = (1 / n_double) * (((n_double - 1) * x0) + (x / Power(x0, n - 1)));
+            double previousNumber = number / power;
+            double currentNumber = (1.0 / number) * (((power - 1) * previousNumber) + (number / Math.Pow(previousNumber, power - 1)));
 
-            while (Math.Abs(x1 - x0) > eps)
+            while (Math.Abs(currentNumber - previousNumber) > eps)
             {
-                x0 = x1;
-                x1 = (1 / n_double) * (((n_double - 1) * x0) + (x / Power(x0, n - 1)));
+                previousNumber = currentNumber;
+                currentNumber = (1.0 / power) * (((power - 1) * previousNumber) + (number / Math.Pow(previousNumber, power - 1)));
             }
 
-            return x1;
+            return currentNumber;
         }
 
-        private static double Power(double x, int pow)
+        private static void CheckDigits(int power, double number, double eps)
         {
-            double result = 1;
-            for (int i = 0; i < pow; i++)
+            if (power <= 0)
             {
-                result *= x;
+                throw new ArgumentException(nameof(power));
             }
 
-            return result;
-        }
-
-        private static void CheckDigits(int n, double x, double eps)
-        {
-            if (n <= 0)
+            if ((number <= 0) && (power % 2 == 0))
             {
-                throw new ArgumentException(nameof(n));
-            }
-
-            if ((x <= 0) && (n % 2 == 0))
-            {
-                throw new ArgumentException(nameof(x));
+                throw new ArgumentException(nameof(number));
             }
 
             if (eps <= 0 || eps > 1)
