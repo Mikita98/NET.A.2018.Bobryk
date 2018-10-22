@@ -54,9 +54,26 @@ namespace Transforming
             return result;
         }
 
-        public static string DoubleToBits(double number)
+        /// <summary>
+        /// Transform double number to string on human language
+        /// </summary>
+        /// <param name ="numbers">
+        ///  Array of double numbers
+        /// </param>
+        /// <returns>array of string</returns>
+        /// <exception cref="ArgumentNullException"</exception>
+        public static string[] DoubleToBits(double[] numbers)
         {
-            string result = DoubleBitsToString.DoubleBitsToString.DoubleToString(number);
+            if (numbers == null)
+            {
+                throw new ArgumentNullException("Array is invalid(null)");
+            }
+            string[] result = { };
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                result[i] = DoubleBitsToString.DoubleBitsToString.DoubleToString(numbers[i]);
+            }
+
             return result;
         }
 
