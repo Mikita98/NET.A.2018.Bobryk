@@ -64,7 +64,7 @@ namespace Polynominal.Tests
 
         [TestCase(new double[] { 1, 1, 1 }, new double[] { 2, 2, 2 }, ExpectedResult = new double[] { 2, 4, 6, 4, 2 })]
         [TestCase(new double[] { 5, 3, 2, 1 }, new double[] { 4, 7, 8 }, ExpectedResult = new double[] { 20, 47, 69, 42, 23, 8 })]
-        public double[] PolynimialTest_DifferentPower_MultiplicationTests(double[] coefficent1, double[] coefficent2)
+        public double[] TestMultiplication_ValidData_ValidResult(double[] coefficent1, double[] coefficent2)
         {
             Polynominal first = new Polynominal(coefficent1);
             Polynominal second = new Polynominal(coefficent2);
