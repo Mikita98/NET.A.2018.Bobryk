@@ -68,7 +68,7 @@ namespace Polynominal
         /// Equals of two polynomial objects
         /// </summary>
         /// <param name="another">Object to compare with</param>
-        /// <returns> Result of Equals </returns>
+        /// <returns> Result of Equals </returns>`
         public override bool Equals(object next)
         {
             if ((GetType() != next.GetType()) || (next == null))
