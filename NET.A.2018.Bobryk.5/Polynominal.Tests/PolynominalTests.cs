@@ -30,7 +30,6 @@ namespace Polynominal.Tests
         {
             Polynominal first = new Polynominal(coefficients);
             return first.ToString();
-
         }
 
         public void TestGetHashCode_SameObjects_ValiDResult()
@@ -43,6 +42,8 @@ namespace Polynominal.Tests
         [TestCase(new double[] { 2, 3, 4 }, new double[] { 2, 2, 4 }, ExpectedResult = new double[] { 4, 5, 8 })]
         [TestCase(new double[] { 1, 9, -3 }, new double[] { 9, 6, 2 }, ExpectedResult = new double[] { 10, 15, -1 })]
         [TestCase(new double[] { -1, -9, 3 }, new double[] { -9, -6, -2 }, ExpectedResult = new double[] { -10, -15, 1 })]
+        [TestCase(new double[] { 0, 0, 0 }, new double[] { 5, 2, 2, 4 }, ExpectedResult = new double[] { 5, 2, 2, 4 })]
+        [TestCase(new double[] { 2, 3, 4 }, new double[] { 0, -9, 4 }, ExpectedResult = new double[] { 2, -6, 8 })]
         public double[] TestPlus_ValidData_ValidResult(double[] coefficent1, double[] coefficent2)
         {
             Polynominal first = new Polynominal(coefficent1);
