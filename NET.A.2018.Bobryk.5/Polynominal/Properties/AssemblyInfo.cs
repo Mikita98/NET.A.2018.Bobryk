@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NET.A.2018.Bobryk.5")]
+[assembly: AssemblyTitle("Polynominal")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NET.A.2018.Bobryk.5")]
+[assembly: AssemblyProduct("Polynominal")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("06fc08b3-8129-4e00-90eb-1c8d28a50f66")]
+[assembly: Guid("51415dec-2786-4b5a-8d10-3038a725b70a")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -4,14 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NET.A._2018.Bobryk._5
+namespace Polynominal
 {
-    public sealed class Polynominal
+    public class Polynominal
     {
         private static readonly double eps = 10e-5;
 
         readonly double[] coefficient;
 
+        /// <summary>
+        /// Constructor of class
+        /// </summary>
+        /// <param name="coefficient">Polynomial coefficients</param>
+        /// <exception cref="ArgumentNullException">
+        /// If Parameters is null
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// If Length less zero
+        /// </exception>
         public Polynominal(params double[] polynomial_coefficients)
         {
             CheckData(polynomial_coefficients);
@@ -19,6 +29,9 @@ namespace NET.A._2018.Bobryk._5
             polynomial_coefficients.CopyTo(coefficient, 0);
         }
 
+        /// <summary>
+        /// Get power of Polynominal
+        /// </summary>
         public int Power
         {
             get
@@ -42,6 +55,20 @@ namespace NET.A._2018.Bobryk._5
         }
 
 
+        public double[] Coefficient
+        {
+            get
+            {
+                return coefficient;
+            }
+
+        }
+
+        /// <summary>
+        /// Equals of two polynomial objects
+        /// </summary>
+        /// <param name="another">Object to compare with</param>
+        /// <returns> Result of Equals </returns>
         public override bool Equals(object next)
         {
             if ((GetType() != next.GetType()) || (next == null))
@@ -54,6 +81,10 @@ namespace NET.A._2018.Bobryk._5
             }
         }
 
+        /// <summary>
+        /// Get hash code of polynomial
+        /// </summary>
+        /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
             unchecked
@@ -68,6 +99,10 @@ namespace NET.A._2018.Bobryk._5
             }
         }
 
+        /// <summary>
+        /// Get string representation of polynomial
+        /// </summary>
+        /// <returns>String representation of polynomial</returns>
         public override string ToString()
         {
             string stringPolynom = string.Empty;
@@ -111,7 +146,7 @@ namespace NET.A._2018.Bobryk._5
 
         public static Polynominal operator +(Polynominal first, Polynominal second)
         {
-            (double[] shortNumber, double[] longNumber)sameArrays = MakeSameArray(first, second);
+            (double[] shortNumber, double[] longNumber) sameArrays = MakeSameArray(first, second);
 
             double[] shortNumber = sameArrays.shortNumber;
             double[] longNumber = sameArrays.longNumber;
@@ -129,7 +164,7 @@ namespace NET.A._2018.Bobryk._5
         public static Polynominal operator -(Polynominal first, Polynominal second)
         {
             bool firstIsShortest = first.GetCoefficients().Length < second.GetCoefficients().Length;
-            (double[] shortest, double[] longest)normalizedArrays = MakeSameArray(first, second);
+            (double[] shortest, double[] longest) normalizedArrays = MakeSameArray(first, second);
 
             double[] shortest = normalizedArrays.shortest;
             double[] longest = normalizedArrays.longest;
@@ -216,7 +251,7 @@ namespace NET.A._2018.Bobryk._5
         {
             if (data == null)
             {
-                throw new ArgumentNullException(nameof(data), "Parameters should not be represent as null array");
+                throw new ArgumentNullException(nameof(data), "is invalid type null");
             }
 
             if (data.Length == 0)
@@ -231,6 +266,5 @@ namespace NET.A._2018.Bobryk._5
             Array.Copy(coefficient, array, coefficient.Length);
             return array;
         }
-
     }
 }
