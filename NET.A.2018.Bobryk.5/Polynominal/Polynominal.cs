@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Polynominal
 {
-    public class Polynominal
+    public class Polynominal : ICloneable, IEquatable<Polynominal>
     {
+        object ICloneable.Clone() => Clone();
+
         private static readonly double eps = 10e-5;
+
+        public Polynominal Clone() => new Polynominal(coefficient);
+
+        public bool Equals(Polynominal compare) => this == compare;
 
         readonly double[] coefficient;
 
