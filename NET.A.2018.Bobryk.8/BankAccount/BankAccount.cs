@@ -6,64 +6,102 @@ using System.Threading.Tasks;
 
 namespace BankAccount
 {
-    public sealed class BankSingleton
-    {
-        private static readonly Lazy<BankSingleton> _instance = new Lazy<BankSingleton>(() => new BankSingleton());
-
-        public List<int> accountsId;
-        public List<int> holdersId;
-
-        BankSingleton() { }
-
-        public static BankSingleton Instance { get { return _instance.Value; } }
-    }
-
-
     public abstract class BankAccount
     {
-        public readonly int accountId;
-        public List<int> holdersId;
+        private Holder.Holder _holder;
 
-        public abstract void DeleteHolder();
+        private decimal fixedPoint;
 
-        public abstract void AddHolder();
+        public decimal minimumSum { get; set; }
 
-        private int CreateAccountId()
+        private decimal balance { get; set; }
+
+        public string AccountId
         {
-            BankSingleton singleton = BankSingleton.Instance;
-            Random random = new Random();
-            int id = random.Next(0, int.MaxValue);
-
-            while (singleton.holdersId.Contains(id))
+            get => AccountId;
+            set
             {
-                id = random.Next(0, int.MaxValue);
+                if (string.IsNullOrEmpty(value))
+                {
+                    throw new ArgumentException(nameof(value), "can't be equal to null or empty!");
+                }
+
+                AccountId = value;
             }
+        }
 
-            return id;
-        }
-        public BankAccount(Holder.Holder holder)
+        public decimal bonusPoint { get; set; }
+
+        public Holder.Holder holder
         {
-            holdersId = new List<int>();
-            holdersId.Add(holder.holderId);
-            accountId = CreateAccountId();
+            get => _holder;
+            set => _holder = value ?? throw new ArgumentException(nameof(value), "can't be equal to null or empty!");
         }
+
+        public void Deposit(decimal sum)
+        {
+            if (sum <= 0)
+            {
+                throw new ArgumentException(nameof(sum), "Deposit amount can not be less or equal to zero");
+            }
+            balance += sum* bonusPoint;
+            bonusPoint = CalculateBonusPoint(sum);
+        }
+
+        public decimal DefaultBonus
+        {
+            get => fixedPoint;
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException(nameof(value), "can't be equal to null or empty!");
+                }
+
+                fixedPoint = value;
+            }
+        }
+
+        public void WithDraw(decimal sum)
+        {
+            if(!IsValidBalance(balance - sum))
+            {
+                throw new ArgumentException(nameof(sum), "Number is bigger then maximum amount!");
+            }
+            balance -= sum;
+            bonusPoint -= IsValidPoint(CalculateBonusPoint(sum));
+        }
+
+        public bool IsValidBalance(decimal balance)
+        {
+            if (balance < minimumSum)
+            {
+                return false;
+            }
+            else
+                return true;
+        }
+
+        public decimal CalculateBonusPoint(decimal sum)
+        {
+            return (decimal)Math.Round(sum / 100);
+        }
+
+        public decimal IsValidPoint(decimal bonusPoint)
+        {
+            if (bonusPoint < fixedPoint)
+            {
+                return fixedPoint;
+            }
+            else
+            {
+                return bonusPoint;
+            }
+        }
+
+        public BankAccount(Holder.Holder holder, string generationId) {
+        }
+
     }
 
-    public class BaseAcount : BankAccount
-    {
-        public override void AddHolder()
-        {
-            throw new NotImplementedException(); 
-        }
-
-        public override void DeleteHolder()
-        {
-            throw new NotImplementedException();
-        }
-
-        BaseAcount(Holder.Holder holder) : base(holder)
-        {
-        }
-
-    }
 }
