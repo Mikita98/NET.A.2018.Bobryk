@@ -8,34 +8,30 @@ namespace BankAccount
 {
     public abstract class BankAccount
     {
-        private Holder.Holder _holder;
+        public decimal FixedPoint { get; protected set; }
 
-        private decimal fixedPoint;
+        public decimal MinimumSum { get; protected set; }
 
-        public decimal minimumSum { get; set; }
+        public decimal Balance { get; protected set; }
 
-        private decimal balance { get; set; }
+        public string AccountId { get; protected set; }
 
-        public string AccountId
+        public decimal BonusPoint { get; protected set; }
+
+        public string HolderId { get; protected set; }
+
+        public decimal DefaultBonus
         {
-            get => AccountId;
+            get => FixedPoint;
             set
             {
-                if (string.IsNullOrEmpty(value))
+                if (value <= 0)
                 {
                     throw new ArgumentException(nameof(value), "can't be equal to null or empty!");
                 }
 
-                AccountId = value;
+                FixedPoint = value;
             }
-        }
-
-        public decimal bonusPoint { get; set; }
-
-        public Holder.Holder holder
-        {
-            get => _holder;
-            set => _holder = value ?? throw new ArgumentException(nameof(value), "can't be equal to null or empty!");
         }
 
         public void Deposit(decimal sum)
@@ -44,54 +40,44 @@ namespace BankAccount
             {
                 throw new ArgumentException(nameof(sum), "Deposit amount can not be less or equal to zero");
             }
-            balance += sum* bonusPoint;
-            bonusPoint = CalculateBonusPoint(sum);
-        }
 
-        public decimal DefaultBonus
-        {
-            get => fixedPoint;
-            set
-            {
-                if (value <= 0)
-                {
-                    throw new ArgumentException(nameof(value), "can't be equal to null or empty!");
-                }
-
-                fixedPoint = value;
-            }
+            Balance += sum * BonusPoint;
+            BonusPoint = CalculateBonusPoint(sum);
         }
 
         public void WithDraw(decimal sum)
         {
-            if(!IsValidBalance(balance - sum))
+            if (!IsValidBalance(Balance - sum))
             {
                 throw new ArgumentException(nameof(sum), "Number is bigger then maximum amount!");
             }
-            balance -= sum;
-            bonusPoint -= IsValidPoint(CalculateBonusPoint(sum));
+
+            Balance -= sum;
+            BonusPoint -= IsValidPoint(CalculateBonusPoint(sum));
         }
 
         public bool IsValidBalance(decimal balance)
         {
-            if (balance < minimumSum)
+            if (balance < MinimumSum)
             {
                 return false;
             }
             else
+            {
                 return true;
+            }
         }
 
         public decimal CalculateBonusPoint(decimal sum)
         {
-            return (decimal)Math.Round(sum / 100);
+            return (decimal)Math.Round(sum / 1000);
         }
 
         public decimal IsValidPoint(decimal bonusPoint)
         {
-            if (bonusPoint < fixedPoint)
+            if (bonusPoint < FixedPoint)
             {
-                return fixedPoint;
+                return FixedPoint;
             }
             else
             {
@@ -99,9 +85,11 @@ namespace BankAccount
             }
         }
 
-        public BankAccount(Holder.Holder holder, string generationId) {
+        public string CreateId()
+        {
+            Random random = new Random();
+            string result = random.Next(0, int.MaxValue).ToString();
+            return result;
         }
-
     }
-
 }

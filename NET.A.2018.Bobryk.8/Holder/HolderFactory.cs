@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Holder
 {
-    class HolderFactory
+    public static class HolderFactory
     {
+        public static Holder Create(string firstName, string surName, string patronymic, string email)
+            => new Holder(firstName, surName, patronymic, email);
     }
 }

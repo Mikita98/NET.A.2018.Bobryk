@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace BankAccount.AcoountFactories
 {
+    /// <summary>
+    /// Abstract class describing bank Account
+    /// </summary>
     public abstract class AccountFactory
     {
-        public abstract BankAccount CreateNewAccount(Holder.Holder holder, string id);
+        public abstract BankAccount CreateNewAccount(string holderId);
     }
 }

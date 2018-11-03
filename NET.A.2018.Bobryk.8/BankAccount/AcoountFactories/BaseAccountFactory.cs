@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BankAccount.AcoountFactories
 {
-    class BaseAccountFactory : AccountFactory
+    public class BaseAccountFactory : AccountFactory
     {
-        public override BankAccount CreateNewAccount(Holder.Holder holder, string id)
+        public override BankAccount CreateNewAccount(string holderId)
         {
-            throw new NotImplementedException();
+            return new BaseAccount(holderId);
         }
     }
 }

@@ -41,7 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Holder.cs" />
+    <Compile Include="HolderFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankAccount\BankAccount.csproj">
+      <Project>{8001e1a4-cd68-4142-9c3f-56659c59e77b}</Project>
+      <Name>BankAccount</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

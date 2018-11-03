@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace BankAccount
 {
-    class GoldAccount : BankAccount
+    public class GoldAccount : BankAccount
     {
-        GoldAccount(Holder.Holder holder, string generationId) : base(holder, generationId)
+        public GoldAccount(string holderId)
         {
-            this.holder = holder;
-            this.DefaultBonus = 0.001m;
-            this.bonusPoint = this.DefaultBonus;
-            this.AccountId = generationId;
-            this.minimumSum = -1000m;
+            this.HolderId = holderId;
+            this.DefaultBonus = 0.05m;
+            this.BonusPoint = this.DefaultBonus;
+            this.AccountId = this.CreateId();
+            this.MinimumSum = -50000m;
         }
     }
 }

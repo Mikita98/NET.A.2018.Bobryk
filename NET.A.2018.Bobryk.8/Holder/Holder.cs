@@ -8,19 +8,33 @@ namespace Holder
 {
     public class Holder
     {
-        public string firstName { get; private set; }
-        public string surName { get; private set; }
-        public string patronymic { get; private set; }
-        public string email { get; private set; }
+        public readonly string HolderId;
 
-        public readonly int holderId;
-
-        Holder(string firstName, string SurName, string patronymic, string email)
+        public Holder(string firstName, string surName, string patronymic, string email)
         {
-            this.firstName = firstName;
-            this.surName = SurName;
-            this.patronymic = patronymic;
-            this.email = email;
+            this.FirstName = firstName;
+            this.SurName = surName;
+            this.Patronymic = patronymic;
+            this.Email = email;
+            this.HolderId = CreateId();
+            this.AccountsId = new List<BankAccount.BankAccount>();
+        }
+
+        public string FirstName { get; private set; }
+
+        public string SurName { get; private set; }
+
+        public string Patronymic { get; private set; }
+
+        public string Email { get; private set; }
+
+        public List<BankAccount.BankAccount> AccountsId { get; private set; }
+
+        private string CreateId()
+        {
+            Random random = new Random();
+            string result = random.Next(0, int.MaxValue).ToString();
+            return result;
         }
     }
 }

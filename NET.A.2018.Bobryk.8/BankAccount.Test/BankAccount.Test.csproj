@@ -48,5 +48,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BankAccount\BankAccount.csproj">
+      <Project>{8001e1a4-cd68-4142-9c3f-56659c59e77b}</Project>
+      <Name>BankAccount</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BankService\BankService.csproj">
+      <Project>{f6218b25-47d5-40cb-9d2d-2bb91e862c0c}</Project>
+      <Name>BankService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Holder\Holder.csproj">
+      <Project>{b8d398ea-390c-4ab9-9e52-22866204f815}</Project>
+      <Name>Holder</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
