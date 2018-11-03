@@ -19,26 +19,26 @@ namespace BankAccount.Test
 
             bankService.CreateAccount(new AcoountFactories.GoldAccountFactory());
 
-            foreach (var temp in holder1.accountsId)
+            foreach (var temp in holder1.AccountsId)
             {
                 Console.WriteLine(temp.ToString());
             }
 
             Console.WriteLine();
 
-            foreach (var temp in holder1.accountsId)
+            foreach (var temp in holder1.AccountsId)
             {
                 bankService.Deposit(temp, 400);
             }
 
-            bankService.DeleteAccount(holder1.accountsId[0]);
+            bankService.DeleteAccount(holder1.AccountsId[0]);
 
-            foreach (var temp in holder1.accountsId)
+            foreach (var temp in holder1.AccountsId)
             {
                 bankService.Withdraw(temp, 500);
             }
 
-            foreach (var temp in holder1.accountsId)
+            foreach (var temp in holder1.AccountsId)
             {
                 Console.WriteLine(temp.ToString());
             }
@@ -49,26 +49,26 @@ namespace BankAccount.Test
 
             bankService.CreateAccount(new AcoountFactories.SilverAccountFactory());
 
-            foreach (var temp in holder2.accountsId)
+            foreach (var temp in holder2.AccountsId)
             {
                 Console.WriteLine(temp.ToString());
             }
 
             Console.WriteLine();
 
-            foreach (var temp in holder2.accountsId)
+            foreach (var temp in holder2.AccountsId)
             {
                 bankService.Deposit(temp, 400);
             }
 
-            bankService.DeleteAccount(holder2.accountsId[0]);
+            bankService.DeleteAccount(holder2.AccountsId[0]);
 
-            foreach (var temp in holder2.accountsId)
+            foreach (var temp in holder2.AccountsId)
             {
                 bankService.Withdraw(temp, 500);
             }
 
-            foreach (var temp in holder2.accountsId)
+            foreach (var temp in holder2.AccountsId)
             {
                 Console.WriteLine(temp.ToString());
             }

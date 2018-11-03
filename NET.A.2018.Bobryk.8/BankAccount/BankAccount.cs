@@ -8,14 +8,29 @@ namespace BankAccount
 {
     public abstract class BankAccount
     {
+        /// <summary>
+        /// Describing fixed points of this account
+        /// </summary>
         public decimal FixedPoint { get; protected set; }
 
+        /// <summary>
+        /// Describing Limit of this account
+        /// </summary>
         public decimal MinimumSum { get; protected set; }
 
+        /// <summary>
+        /// Describing balance of this account
+        /// </summary>
         public decimal Balance { get; protected set; }
 
+        /// <summary>
+        /// Describing AccountId of this account
+        /// </summary>
         public string AccountId { get; protected set; }
 
+        /// <summary>
+        /// Describing BonusPoints of this account
+        /// </summary>
         public decimal BonusPoint { get; protected set; }
 
         public string HolderId { get; protected set; }
@@ -34,6 +49,11 @@ namespace BankAccount
             }
         }
 
+        /// <summary>
+        /// Describing BonusPoints of this account
+        /// </summary>
+        /// <exception cref="ArgumentException"
+        /// </exception>
         public void Deposit(decimal sum)
         {
             if (sum <= 0)

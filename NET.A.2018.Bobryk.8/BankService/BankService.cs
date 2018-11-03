@@ -37,14 +37,14 @@ namespace BankService
         public void CreateAccount(AccountFactory accountFactory)
         {
             CheckFactory(accountFactory);
-            BankAccount.BankAccount bankAccount = accountFactory.CreateNewAccount(_holder.holderId);
-            _holder.accountsId.Add(bankAccount);
+            BankAccount.BankAccount bankAccount = accountFactory.CreateNewAccount(_holder.HolderId);
+            _holder.AccountsId.Add(bankAccount);
         }
 
         public void DeleteAccount(BankAccount.BankAccount bankAccount)
         {
             CheckAccount(bankAccount);
-            _holder.accountsId.Remove(bankAccount);
+            _holder.AccountsId.Remove(bankAccount);
         }
 
         private void CheckNumbers(decimal sum, BankAccount.BankAccount bankAccount, Holder.Holder holder)
