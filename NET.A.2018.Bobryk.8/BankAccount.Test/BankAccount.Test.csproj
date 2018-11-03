@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8001E1A4-CD68-4142-9C3F-56659C59E77B}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BankAccount</RootNamespace>
-    <AssemblyName>BankAccount</AssemblyName>
+    <ProjectGuid>{429A34CA-F715-43DC-BB14-F4EF025E9228}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BankAccount.Test</RootNamespace>
+    <AssemblyName>BankAccount.Test</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,23 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AcoountFactories\AccountFactory.cs" />
-    <Compile Include="AcoountFactories\BaseAccountFactory.cs" />
-    <Compile Include="AcoountFactories\GoldAccountFactory.cs" />
-    <Compile Include="AcoountFactories\PlatinumAccountFactory.cs" />
-    <Compile Include="AcoountFactories\SilverAccountFactory.cs" />
-    <Compile Include="BankAccount.cs" />
-    <Compile Include="BaseAccount.cs" />
-    <Compile Include="GoldAccount.cs" />
-    <Compile Include="PlatinumAccount.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SilverAccount.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Holder\Holder.csproj">
-      <Project>{b8d398ea-390c-4ab9-9e52-22866204f815}</Project>
-      <Name>Holder</Name>
-    </ProjectReference>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
