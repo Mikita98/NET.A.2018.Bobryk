@@ -13,6 +13,9 @@ namespace Transforming
     /// </summary>
     public static class TransformingToWords
     {
+        
+
+
         /// <summary>
         /// Transform double number to string on human language
         /// </summary>

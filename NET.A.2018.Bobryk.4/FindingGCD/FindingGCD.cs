@@ -26,7 +26,7 @@ namespace FindingGCD
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
-            int gcd = Euclid(numbers);
+            int gcd = FindGCD(new GCD(Euclid), numbers);
 
             timer.Stop();
 
@@ -34,6 +34,8 @@ namespace FindingGCD
 
             return Tuple.Create(gcd, time);
         }
+
+        public delegate int GCD(int value1, int value2);
 
         /// <summary>
         /// Find GCD numbers from Euclid
@@ -49,13 +51,25 @@ namespace FindingGCD
             Stopwatch timer = new Stopwatch();
             timer.Start();
 
-            int gcd = Stein(numbers);
+            int gcd = FindGCD(new GCD(Stein), numbers);
 
             timer.Stop();
 
             int time = timer.Elapsed.Milliseconds;
 
             return Tuple.Create(gcd, time);
+        }
+
+        private static int FindGCD(GCD gcd, int[] numbers)
+        {
+            int nod = gcd(numbers[0], numbers[1]);
+
+            for (int i = 2; i < numbers.Length; i++)
+            {
+                nod = gcd(nod, numbers[i]);
+            }
+
+            return nod;
         }
 
         private static int Euclid(int num1, int num2)
@@ -134,30 +148,6 @@ namespace FindingGCD
             }
 
             return Stein((num2 - num1) >> 1, num1);
-        }
-
-        private static int Stein(params int[] numbers)
-        {
-            int gdc = Stein(numbers[0], numbers[1]);
-
-            for (int i = 2; i < numbers.Length; i++)
-            {
-                gdc = Stein(gdc, numbers[i]);
-            }
-
-            return gdc;
-        }
-
-        private static int Euclid(params int[] numbers)
-        {
-            int gdc = Euclid(numbers[0], numbers[1]);
-
-            for (int i = 2; i < numbers.Length; i++)
-            {
-                gdc = Euclid(gdc, numbers[i]);
-            }
-
-            return gdc;
         }
 
         private static void CheckArray(params int[] numbers)
