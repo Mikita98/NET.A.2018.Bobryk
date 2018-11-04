@@ -24,7 +24,7 @@ namespace JaggedSorting.Test
             expected[0] = array1;
             expected[1] = array2;
             expected[2] = array0;
-            JaggedSorting.MaxValueSorting(ref array);
+            array.Sort(new CompareByMax());
             CollectionAssert.AreEqual(array, expected);
         }
 
@@ -43,7 +43,7 @@ namespace JaggedSorting.Test
             expected[1] = array2;
             expected[2] = array1;
             expected[3] = array0;
-            JaggedSorting.MinValueSorting(ref array);
+            array.Sort(new CompareByMin());
             CollectionAssert.AreEqual(array, expected);
         }
 
@@ -62,7 +62,7 @@ namespace JaggedSorting.Test
             expected[1] = array2;
             expected[2] = array1;
             expected[3] = array0;
-            JaggedSorting.SumValueSorting(ref array);
+            array.Sort(new CompareBySum());
             CollectionAssert.AreEqual(array, expected);
         }
     }
