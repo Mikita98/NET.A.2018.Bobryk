@@ -82,6 +82,21 @@ namespace DoubleBitsToString
             return result;
         }
 
+        public static string[] TransformArray(double[] numbers)
+        {
+            if (numbers == null)
+            {
+                throw new ArgumentNullException("Array is invalid(null)");
+            }
+            string[] result = { };
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                result[i] = DoubleToString(numbers[i]);
+            }
+
+            return result;
+        }
+
         private static int CheckSign(double number)
         {
             if (number < 0)
