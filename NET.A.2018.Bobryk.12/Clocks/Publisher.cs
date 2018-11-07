@@ -30,11 +30,6 @@ namespace Clocks
             }
         }
 
-        protected virtual void OnNewMail(object sender, MailEvent e)
-        {
-            newMail?.Invoke(sender, e);
-        }
-
         public void Publish(int miliseconds)
         {
             Timer tmrShow = new Timer();
@@ -48,7 +43,7 @@ namespace Clocks
         private void OnTimedEvent(Object source, ElapsedEventArgs e)
         {
             GenerateData();
-
+            newMail?.Invoke(this, mail);
         }
 
         private void GenerateData()
