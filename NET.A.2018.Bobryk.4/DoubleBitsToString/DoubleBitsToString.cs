@@ -82,6 +82,13 @@ namespace DoubleBitsToString
             return result;
         }
 
+        /// <summary>
+        /// Tranform array of double to array of bits
+        /// </summary>
+        /// <param name ="numbers">
+        /// array of numbers to transform
+        /// </param>
+        /// <returns>array of string wits bits</returns>
         public static string[] TransformArray(double[] numbers)
         {
             if (numbers == null)

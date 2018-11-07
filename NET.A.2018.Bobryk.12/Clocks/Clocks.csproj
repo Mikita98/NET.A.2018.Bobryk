@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{03B8B33D-D199-4B25-8875-F3FE487EB971}</ProjectGuid>
+    <ProjectGuid>{E962041C-2CA0-4261-AA3B-337E16BA6287}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Transforming</RootNamespace>
-    <AssemblyName>Transforming</AssemblyName>
+    <RootNamespace>Clocks</RootNamespace>
+    <AssemblyName>Clocks</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,16 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Transforming.cs" />
-    <Compile Include="TransformingDelegate.cs" />
-    <Compile Include="TransformingToWords.cs" />
+    <Compile Include="AnotherSubscriber.cs" />
+    <Compile Include="MailEvent.cs" />
+    <Compile Include="OtherSubscriber.cs" />
+    <Compile Include="Publisher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DoubleBitsToString\DoubleBitsToString.csproj">
-      <Project>{03cb5158-090e-495e-a8cf-acf0e906fb9b}</Project>
-      <Name>DoubleBitsToString</Name>
-    </ProjectReference>
+    <Compile Include="Subscriber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

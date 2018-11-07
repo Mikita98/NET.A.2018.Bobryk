@@ -13,9 +13,6 @@ namespace Transforming
     /// </summary>
     public static class TransformingToWords
     {
-        
-
-
         /// <summary>
         /// Transform double number to string on human language
         /// </summary>
@@ -58,14 +55,13 @@ namespace Transforming
         }
 
         /// <summary>
-        /// Transform double number to string on human language
+        /// Tranform array of double to array of words
         /// </summary>
         /// <param name ="numbers">
-        ///  Array of double numbers
+        /// array of numbers to transform
         /// </param>
-        /// <returns>array of string</returns>
-        /// <exception cref="ArgumentNullException"</exception>
-        public static string[] DoubleToBits(double[] numbers)
+        /// <returns>array of string wits words</returns>
+        public static string[] TransformArray(double[] numbers)
         {
             if (numbers == null)
             {
@@ -74,11 +70,20 @@ namespace Transforming
             string[] result = { };
             for (int i = 0; i < numbers.Length; i++)
             {
-                result[i] = DoubleBitsToString.DoubleBitsToString.DoubleToString(numbers[i]);
+                result[i] = TransformToWords(numbers[i]);
             }
 
             return result;
         }
+
+        /// <summary>
+        /// Transform double number to string on human language
+        /// </summary>
+        /// <param name ="numbers">
+        ///  Array of double numbers
+        /// </param>
+        /// <returns>array of string</returns>
+        /// <exception cref="ArgumentNullException"</exception>
 
         private static void AddSymbol(ref string result, string symbol)
         {

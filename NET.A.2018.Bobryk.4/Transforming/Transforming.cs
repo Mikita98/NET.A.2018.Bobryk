@@ -10,6 +10,8 @@ namespace Transforming
     {
         string Transform(double number);
         string[] TransformArray(double[] numbers);
+        string[] TransformArray(TransformingDelegate.Transforming transforming, double[] numbers);
+
     }
 
     public class DoubleToWords: ITransforming
@@ -30,6 +32,9 @@ namespace Transforming
 
             return result;
         }
+
+        public string[] TransformArray(TransformingDelegate.Transforming transforming, double[] numbers)
+        => transforming(numbers);
     }
 
     public class DoubleToBits : ITransforming
@@ -50,5 +55,8 @@ namespace Transforming
 
             return result;
         }
+
+        public string[] TransformArray(TransformingDelegate.Transforming transforming, double[] numbers)
+            => transforming(numbers);
     }
 }
