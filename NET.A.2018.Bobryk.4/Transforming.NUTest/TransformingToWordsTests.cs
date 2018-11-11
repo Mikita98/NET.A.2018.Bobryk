@@ -10,18 +10,30 @@ namespace Transforming.NUTest
     [TestFixture]
     public class TransformingToWordsTests
     {
-        [Test]
-        [TestCase(-2.4, ExpectedResult = "minus two point four")]
-        [TestCase(0, ExpectedResult = "zero")]
-        [TestCase(-10956.4567, ExpectedResult = "minus one zero nine five six point four five six seven")]
-        [TestCase(100, ExpectedResult = "one zero zero")]
-        [TestCase(.4, ExpectedResult = "zero point four")]
-        [TestCase(+8, ExpectedResult = "eight")]
-        [TestCase(143567.9087654, ExpectedResult = "one four three five six seven point nine zero eight seven six five four")]
-        public string TranformingToWordsTest(double number)
+        [TestCase(new double[1] { 4294967295.0 }, ExpectedResult = new string[1] { "0100000111101111111111111111111111111111111000000000000000000000" })]
+        public string[] DoubleToBitsTransformDelegate_ValidData_ValidResult(double[] numbers)
         {
-            string result = TransformingToWords.TransformToWords(number);
-                return result;
+            DoubleToBits doubleToBits = new DoubleToBits();
+            return GenericTransforming.TranformTo<double, string>(numbers, doubleToBits.Transform);
+        }
+
+        [TestCase(new double[2] { -2.4, 3.7 }, ExpectedResult = new string[2] { "minus two point four", "three point seven" })]
+        public string[] DoubleToWordsTransformDelegate_ValidData_ValidResult(double[] numbers)
+        {
+            DoubleToWords doubleToWords = new DoubleToWords();
+            return GenericTransforming.TranformTo<double, string>(numbers, doubleToWords.Transform);
+        }
+
+        [TestCase(new double[1] { 4294967295.0 }, ExpectedResult = new string[1] { "0100000111101111111111111111111111111111111000000000000000000000" })]
+        public string[] DoubleToBitsTransformInterface_ValidData_ValidResult(double[] numbers)
+        {
+            return GenericTransforming.TranformTo<double, string>(numbers, new DoubleToBits());
+        }
+
+        [TestCase(new double[2] { -2.4, 3.7 }, ExpectedResult = new string[2] { "minus two point four", "three point seven" })]
+        public string[] DoubleToWordsTransformInterface_ValidData_ValidResult(double[] numbers)
+        {
+            return GenericTransforming.TranformTo<double, string>(numbers, new DoubleToWords());
         }
     }
 }

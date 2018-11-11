@@ -8,7 +8,14 @@ namespace BinarySearch
 {
     public class BinarySearch
     {
-        public  int Search<T>( T[] array, T key, IComparer<T> comparer)
+        /// <summary>
+        /// Seacrh number in array
+        /// </summary>
+        /// <param name="array">Array where will searh</param>
+        /// /// <param name="key">Number need to find</param>
+        /// /// <param name="comparer">Algoritm to compare</param>
+        /// <exception cref="ArgumentException"> if numbers null </exception>
+        public int Search<T>( T[] array, T key, IComparer<T> comparer)
         {
             int left = 0;
             int right = array.Length;
