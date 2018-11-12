@@ -54,6 +54,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DoubleBitsToString\DoubleBitsToString.csproj">
+      <Project>{03cb5158-090e-495e-a8cf-acf0e906fb9b}</Project>
+      <Name>DoubleBitsToString</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Transforming\Transforming.csproj">
       <Project>{03b8b33d-d199-4b25-8875-f3fe487eb971}</Project>
       <Name>Transforming</Name>

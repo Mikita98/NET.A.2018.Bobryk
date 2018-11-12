@@ -40,6 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitsTransformerAdapter.cs" />
+    <Compile Include="BitsTransformingAdapter.cs" />
+    <Compile Include="ITranforming.cs" />
+    <Compile Include="ITranformer.cs" />
+    <Compile Include="WordTransformerAdapter.cs" />
+    <Compile Include="WordTransformingAdapter.cs" />
     <Compile Include="Transforming.cs" />
     <Compile Include="TransformingToWords.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
