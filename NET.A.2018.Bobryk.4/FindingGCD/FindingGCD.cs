@@ -12,6 +12,8 @@ namespace FindingGCD
     /// </summary>
     public static class FindingGCD
     {
+        public delegate int GCD(int value1, int value2);
+
         /// <summary>
         /// Find GCD numbers from Euclid
         /// </summary>
@@ -34,8 +36,6 @@ namespace FindingGCD
 
             return Tuple.Create(gcd, time);
         }
-
-        public delegate int GCD(int value1, int value2);
 
         /// <summary>
         /// Find GCD numbers from Euclid

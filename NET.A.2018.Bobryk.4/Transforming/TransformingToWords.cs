@@ -55,7 +55,7 @@ namespace Transforming
         }
 
         /// <summary>
-        /// Tranform array of double to array of words
+        /// Transform array of double to array of words
         /// </summary>
         /// <param name ="numbers">
         /// array of numbers to transform
@@ -67,6 +67,7 @@ namespace Transforming
             {
                 throw new ArgumentNullException("Array is invalid(null)");
             }
+
             string[] result = { };
             for (int i = 0; i < numbers.Length; i++)
             {
@@ -75,16 +76,7 @@ namespace Transforming
 
             return result;
         }
-
-        /// <summary>
-        /// Transform double number to string on human language
-        /// </summary>
-        /// <param name ="numbers">
-        ///  Array of double numbers
-        /// </param>
-        /// <returns>array of string</returns>
-        /// <exception cref="ArgumentNullException"</exception>
-
+  
         private static void AddSymbol(ref string result, string symbol)
         {
             result += symbol + " ";

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Transforming
 {  
     /// <summary>
-    /// Main satic class for Transforming
+    /// Main static class for Transforming
     /// </summary>
     public static class Transforming
     {
@@ -21,15 +21,17 @@ namespace Transforming
         /// <param name="numbers"></param>
         /// <param name="transformer"></param>
         /// <returns></returns>
-        public static TResult[] Filter<TSource, TResult>(TSource[] numbers, ITransformer<TSource, TResult> transformer)
+        public static TResult[] TransformGeneric<TSource, TResult>(TSource[] numbers, ITransformer<TSource, TResult> transformer)
         {
             CheckData<TSource>(numbers);
 
             TResult[] results = new TResult[numbers.Length];
+            int i = 0;
 
-            for (int i = 0; i < numbers.Length; i++)
+            foreach (var t in numbers)
             {
-                results[i] = transformer.Transform(numbers[i]);
+               results[i] = transformer.Transform(t);
+               i++;
             }
 
             return results;
@@ -44,15 +46,17 @@ namespace Transforming
         /// <param name="transform"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentException">if array null</exception>
-        public static TResult[] Filter<TSource, TResult>(TSource[] numbers, Func<TSource, TResult> transform)
+        public static TResult[] TransformGeneric<TSource, TResult>(TSource[] numbers, Func<TSource, TResult> transform)
         {
             CheckData<TSource>(numbers);
 
             TResult[] results = new TResult[numbers.Length];
+            int i = 0;
 
-            for (int i = 0; i < numbers.Length; i++)
+            foreach (var t in numbers)
             {
-                results[i] = transform(numbers[i]);
+                results[i] = transform(t);
+                i++;
             }
 
             return results;
@@ -109,5 +113,4 @@ namespace Transforming
             }
         }
     }
-
 }

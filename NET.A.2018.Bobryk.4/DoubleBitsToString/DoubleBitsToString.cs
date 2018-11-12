@@ -83,7 +83,7 @@ namespace DoubleBitsToString
         }
 
         /// <summary>
-        /// Tranform array of double to array of bits
+        /// Transform array of double to array of bits
         /// </summary>
         /// <param name ="numbers">
         /// array of numbers to transform
@@ -95,6 +95,7 @@ namespace DoubleBitsToString
             {
                 throw new ArgumentNullException("Array is invalid(null)");
             }
+
             string[] result = { };
             for (int i = 0; i < numbers.Length; i++)
             {
