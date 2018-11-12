@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Transforming
 {
+    /// <summary>
+    /// Adapter that implement generic interface ITransformer for Word transforming
+    /// </summary>
     public class WordTransformerAdapter : ITransformer<double, string>
     {
         public string Transform(double number)

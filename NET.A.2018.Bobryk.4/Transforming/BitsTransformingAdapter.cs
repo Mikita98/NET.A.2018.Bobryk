@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Transforming
 {
+    /// <summary>
+    /// Adapter that implement NOT generic interface ITransforming for Bits transforming
+    /// </summary>
     public class BitsTransformingAdapter : ITransforming
     {
         public string Transform(double number)

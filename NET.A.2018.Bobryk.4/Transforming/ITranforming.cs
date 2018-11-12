@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Transforming
 {
     /// <summary>
-    /// interface 
+    /// NOT generic interface for transforming
     /// </summary>
     public interface ITransforming
     {

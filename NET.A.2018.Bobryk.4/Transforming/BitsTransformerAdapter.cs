@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Transforming
 {
-    public class BitsTransformerAdapter :ITransformer<double, string>
+    /// <summary>
+    /// Adapter that implement generic interface ITransformer for Bits transforming
+    /// </summary>
+    public class BitsTransformerAdapter : ITransformer<double, string>
     {
         public string Transform(double number)
             => DoubleBitsToString.DoubleBitsToString.DoubleToString(number);
