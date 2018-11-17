@@ -14,3 +14,12 @@
 
 - Разработать обобщенный типизированный класс-коллекцию Queue, реализующий основные операции для работы с очередью, и предоставляющий возможность итерирования по ней, реализовав итератор «вручную» (без использования блок-итератора yield). Протестировать методы (NUnit) разработанного класса c использованием типов BCL и кастомных типов, как реализующих, так и не рализующих интерфейс IEquetable, как переопределяющих, так и не переопределяющих виртуальный метод Equals типа System.Object.
 [Решение](https://github.com/Mikita98/NET.A.2018.Bobryk/blob/master/NET.A.2018.Bobryk.15/Queue/Queue.cs)
+
+### Day 16
+
+-Разработать обобщенный класс-коллекцию [BinarySearchTree](https://github.com/Mikita98/NET.A.2018.Bobryk/blob/master/NET.A.2018.Bobryk..16/BinarySearchTree/BinarySearchTree.cs) (бинарное дерево поиска). Предусмотреть возможности использования подключаемого интерфейса для реализации отношения порядка. Реализовать три способа обхода дерева: прямой (preorder), поперечный (inorder), обратный (postorder): для реализации использовать блок-итератор (yield). Протестировать разработанный класс, используя следующие типы:
+1. System.Int32 (использовать сравнение по умолчанию и [подключаемый компаратор](https://github.com/Mikita98/NET.A.2018.Bobryk/blob/master/NET.A.2018.Bobryk..16/BinarySearchTree.Test/CustomComparers/IntComparer.cs));
+2. System.String (использовать сравнение по умолчанию и [подключаемый компаратор](https://github.com/Mikita98/NET.A.2018.Bobryk/blob/master/NET.A.2018.Bobryk..16/BinarySearchTree.Test/CustomComparers/StringComparer.cs));
+3. пользовательский класс Book, для объектов которого реализовано отношения порядка (использовать сравнение по умолчанию и [подключаемый компаратор](https://github.com/Mikita98/NET.A.2018.Bobryk/blob/master/NET.A.2018.Bobryk..16/BinarySearchTree.Test/CustomComparers/BookComparer.cs));
+4. пользовательскую структуру Point, для объектов которого не реализовано отношения порядка (использовать [подключаемый компаратор](https://github.com/Mikita98/NET.A.2018.Bobryk/blob/master/NET.A.2018.Bobryk..16/BinarySearchTree.Test/CustomComparers/PointComparer.cs)).
+
