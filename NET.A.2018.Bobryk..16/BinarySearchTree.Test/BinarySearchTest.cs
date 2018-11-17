@@ -45,9 +45,11 @@ namespace BinarySearchTree.Test
         public void ComparingPointValues_DefaultCompareAndCustomCompare(params int[] array)
         {
             List<Point> points = ArrayPointToList(array);
-            BinarySearchTree<Point> first = CreateTree<Point>(points);
+            BinarySearchTree<Point> first = CreateTree<Point>(new PointComparer(),points);
             BinarySearchTree<Point> second = CreateTree<Point>(new PointComparer(), points);
-            Assert.IsFalse(first == second);
+            var list1 = first.PreOrder();
+            var list2 = second.PreOrder();
+            CollectionAssert.AreEqual(list1.ToArray(), list2.ToArray());
         }
 
         #region Private methods

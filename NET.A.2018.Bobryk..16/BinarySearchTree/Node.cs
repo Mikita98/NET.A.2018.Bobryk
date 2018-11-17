@@ -9,8 +9,8 @@ namespace BinarySearchTree
     public class Node<T>
     {
         public T element { get; set; }
-        public Node<T> rightChild { get; set; }
-        public Node<T> leftChild { get; set; }
+        public Node<T> rightChild;
+        public Node<T> leftChild;
 
         public Node(T element)
         {
