@@ -21,6 +21,14 @@ namespace BinarySearchTree.Test
             Assert.AreEqual(first, second);
         }
 
+        [TestCase(new int[] { 9, 8, 5, 2, 7, 0, -46, 24, 56 }, 2)]
+        public void ContainsIntValues_DefaultCompareAndCustomCompare(int[] array, int expected)
+        {
+            BinarySearchTree<int> tree = CreateTree<int>(array);
+            
+            Assert.IsTrue(tree.Contains(expected));
+        }
+
         [TestCase( "feofue", "rgrdg", "1000", "2452300", "123124")]
         [TestCase("one", "two", "tree", "four", "five")]
         public void ComparingStringValues_DefaultCompareAndCustomCompare(params string[] array)

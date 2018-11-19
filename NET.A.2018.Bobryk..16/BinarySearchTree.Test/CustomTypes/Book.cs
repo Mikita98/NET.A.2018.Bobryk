@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree.Test.CustomTypes
 {
-    public class Book
+    public class Book : IComparable<Book>
     {
         public int pages { get; set; }
 
@@ -15,17 +15,9 @@ namespace BinarySearchTree.Test.CustomTypes
             this.pages = pages;
         }
 
-        public override bool Equals(object obj)
+        public int CompareTo(Book other)
         {
-            Book otherBook = obj as Book;
-            if (this.pages == otherBook.pages)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return pages.CompareTo(other.pages);
         }
     }
 }

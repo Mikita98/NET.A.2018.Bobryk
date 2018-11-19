@@ -13,11 +13,15 @@ namespace BinarySearchTree
     /// <typeparam name="T"></typeparam>
     public class BinarySearchTree<T> : IEnumerable<T>
     {
+        private const int DEFAULTVERSION = 1;
+
         private Node<T> Root { get; set; }
 
         private Comparison<T> comparison { get; }
 
         private bool IsEmpty { get => Root == null; }
+
+        private int Version { get; set; }
 
         #region Constructors
         /// <summary>
@@ -25,6 +29,12 @@ namespace BinarySearchTree
         /// </summary>
         public BinarySearchTree()
         {
+            if (!typeof(IComparable<T>).IsAssignableFrom(typeof(T)))
+            {
+                throw new ArgumentException($"The {typeof(T)} must immplement IComparable<{typeof(T)}> interface.");
+            }
+
+            this.Version = DEFAULTVERSION;
             this.comparison = Comparer<T>.Default.Compare;
         }
 
@@ -35,6 +45,7 @@ namespace BinarySearchTree
         public BinarySearchTree(IComparer<T> comparer)
         {
             this.comparison = comparer.Compare;
+            this.Version = DEFAULTVERSION;
         }
 
         /// <summary>
@@ -44,11 +55,30 @@ namespace BinarySearchTree
         public BinarySearchTree(Comparison<T> comparison)
         {
             this.comparison = comparison;
+            this.Version = DEFAULTVERSION;
         }
 
         #endregion
 
         #region Public methods
+
+        /// <summary>
+        /// Method check is tree contain input element
+        /// </summary>
+        /// <param name="element"></param>
+        /// <returns></returns>
+        public bool Contains(T element)
+        {
+            foreach (Node<T> iterator in NodeLeftRight(Root))
+            {
+                if (Equals(iterator.element,element))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
 
         /// <summary>
         /// Inserts elements in binary tree
@@ -66,6 +96,16 @@ namespace BinarySearchTree
                 Node<T> root = Root;
                 InsertNode(ref root, element);
             }
+            Version++;
+        }
+
+        /// <summary>
+        /// Removes a tree
+        /// </summary>
+        public void Remove()
+        {
+            Root = null;
+            this.Version = DEFAULTVERSION;
         }
 
         /// <summary>
@@ -213,5 +253,17 @@ namespace BinarySearchTree
             return GetEnumerator();
         }
         #endregion
+
+        class Node<T>
+        {
+            public T element { get; set; }
+            public Node<T> rightChild;
+            public Node<T> leftChild;
+
+            public Node(T element)
+            {
+                this.element = element;
+            }
+        }
     }
 }
