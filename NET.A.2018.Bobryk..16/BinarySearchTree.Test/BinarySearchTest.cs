@@ -25,7 +25,6 @@ namespace BinarySearchTree.Test
         public void ContainsIntValues_DefaultCompareAndCustomCompare(int[] array, int expected)
         {
             BinarySearchTree<int> tree = CreateTree<int>(array);
-            
             Assert.IsTrue(tree.Contains(expected));
         }
 
