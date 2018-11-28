@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
-    public class ParserURL
+    public interface IProvider
     {
-        public class SourceRead
-        {
+        void Add(IProvider provider);
 
-        } 
+        void Remove(IProvider provider);
 
-        public class 
+        bool Validate(string adress);
     }
 }
