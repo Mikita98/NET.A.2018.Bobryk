@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ParserURL;
 
-namespace ParserURl.ConsoleTest
+namespace ParserURL.ConsoleTest
 {
     class Program
     {
