@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
+    /// <summary>
+    /// Implements Composite pattern
+    /// </summary>
     public interface IProvider
     {
         void Add(IProvider provider);

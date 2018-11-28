@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
+    /// <summary>
+    /// Imlements composite pattern
+    /// </summary>
     public class Provider : IProvider
     {
         private List<IProvider> children = new List<IProvider>();

@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 namespace ParserURL
 {
+    /// <summary>
+    /// Structure for saving url adresses
+    /// </summary>
     public class URL : IURL<string>
     {
         public string HostName { get; set; }

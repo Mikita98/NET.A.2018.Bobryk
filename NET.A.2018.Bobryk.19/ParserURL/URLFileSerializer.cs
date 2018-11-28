@@ -10,12 +10,12 @@ using System.Xml.Linq;
 namespace ParserURL
 {
     /// <summary>
-    /// 
+    /// Imlements interface to serialize
     /// </summary>
     public class URLFileSerializer : ISerializer<List<URL>>
     {
         /// <summary>
-        /// 
+        /// Serialize file in user directory
         /// </summary>
         /// <param name="list"></param>
         /// <param name="path"></param>

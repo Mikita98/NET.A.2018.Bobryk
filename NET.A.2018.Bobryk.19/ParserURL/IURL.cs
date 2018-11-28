@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
+    /// <summary>
+    /// Generic interface for saving url
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IURL<T>
     {
         T HostName { get; set; }

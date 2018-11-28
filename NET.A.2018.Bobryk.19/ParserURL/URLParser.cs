@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
+    /// <summary>
+    /// Implements Interface for parsing
+    /// </summary>
     public class URLParser : IParser<IEnumerable<string>, List<URL>>
     {
         /// <summary>

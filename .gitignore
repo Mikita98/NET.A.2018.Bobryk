@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+*.csproj
+NET.A.2018.Bobryk.19/ParserURl.ConsoleTest/Properties/AssemblyInfo.cs
+NET.A.2018.Bobryk.19/ParserURL/packages.config
+NET.A.2018.Bobryk.19/ParserURL/ParserURL.csproj
+*.csproj
+*.csproj
+NET.A.2018.Bobryk.19/ParserURL/ParserURL.csproj
+NET.A.2018.Bobryk.19/ParserURL/ParserURL.csproj

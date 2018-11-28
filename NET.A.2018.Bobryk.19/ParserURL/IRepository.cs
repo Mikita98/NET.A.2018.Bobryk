@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
+    /// <summary>
+    /// Implements IRepository pattern
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IRepository<T>
     {
         IEnumerable<T> GetElements();
