@@ -7,12 +7,12 @@ using Matrix.Validators;
 
 namespace Matrix.Matrix
 {
-    public class DiagonalMarix<T> : Matrix<T> where T : IComparable<T>
+    public class DiagonalMatrix<T> : Matrix<T> where T : IComparable<T>
     {
-        public DiagonalMarix(int number, IValidator<T[,]> validator) : base(number, validator)
+        public DiagonalMatrix(int number, IValidator<T[,]> validator) : base(number, validator)
         { }
 
-        public DiagonalMarix(T[,] matrix, IValidator<T[,]> validator) : base(matrix, validator)
+        public DiagonalMatrix(T[,] matrix, IValidator<T[,]> validator) : base(matrix, validator)
         { }
 
         public override void InsertElement(int row, int col, T value)

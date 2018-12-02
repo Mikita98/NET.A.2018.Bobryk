@@ -37,14 +37,14 @@ namespace Matrix
         /// </summary>
         /// <param name="matrix"></param>
         /// <param name="validator"></param>
-        public Matrix(T[,] matrix, IValidator<T[,]> validator)
+        public Matrix(T[,] matrixAnother, IValidator<T[,]> validator)
         {
-            CheckMatrix(matrix);
             CheckValidator(validator);
-
-            this.Number = (int)Math.Sqrt(matrix.Length);
-            matrix.CopyTo(this.matrix, 0);
             this.validator = validator;
+            CheckMatrix(matrixAnother);
+
+            this.Number = (int)Math.Sqrt(matrixAnother.Length);
+            this.matrix = matrixAnother;
         }
 
         public event EventHandler<ChangingElementEventArgs> ChangeElement = delegate { };
