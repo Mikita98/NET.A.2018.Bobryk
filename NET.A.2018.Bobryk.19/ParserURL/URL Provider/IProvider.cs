@@ -7,15 +7,11 @@ using System.Threading.Tasks;
 namespace ParserURL
 {
     /// <summary>
-    /// Generic interface for saving url
+    /// Implements IRepository pattern
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IURL<T>
+    public interface IProvider<T>
     {
-        T HostName { get; set; }
-
-        List<T> Segments { get; set; }
-
-        Dictionary<T, T> Parameters { get; set; }
+        IEnumerable<T> GetElements();
     }
 }

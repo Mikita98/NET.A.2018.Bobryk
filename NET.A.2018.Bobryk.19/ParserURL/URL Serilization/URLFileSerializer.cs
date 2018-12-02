@@ -14,18 +14,29 @@ namespace ParserURL
     /// </summary>
     public class URLFileSerializer : ISerializer<List<URL>>
     {
+        private string Path { get; }
+
         /// <summary>
-        /// Serialize file in user directory
+        /// Constructor accepting save path 
         /// </summary>
-        /// <param name="list"></param>
         /// <param name="path"></param>
-        public void Serialize(List<URL> list, string path)
+        public URLFileSerializer(string path)
         {
             if (!File.Exists(path))
             {
                 throw new DirectoryNotFoundException("Invalid directory path!");
             }
 
+            this.Path = path;
+        }
+
+        /// <summary>
+        /// Serialize file in user directory
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="path"></param>
+        public void Serialize(List<URL> list)
+        {
             var xml = new XElement("urlAddresses",
                 list.Select(x => new XElement("urlAddress",
                 new XElement("host",
@@ -37,7 +48,7 @@ namespace ParserURL
                 new XAttribute("value", y.Value),
                 new XAttribute("key", y.Key)))))));
             XDocument xDoc = new XDocument(xml);
-            xDoc.Save(path);
+            xDoc.Save(this.Path);
         }
     }
 }

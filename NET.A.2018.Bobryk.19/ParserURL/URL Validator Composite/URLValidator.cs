@@ -10,7 +10,7 @@ namespace ParserURL
     /// <summary>
     /// Implements IProvider for validate URL
     /// </summary>
-    public class URLProvider : IProvider
+    public class URLValidator : IValidator<string>
     {
         static Logger logger = LogManager.GetCurrentClassLogger();
 
@@ -33,22 +33,6 @@ namespace ParserURL
             }
 
             return result;
-        }
-
-        public void Remove(IProvider provider)
-        {
-            throw new NotImplementedException();
-        }
-    
-
-        public void Add(IProvider provider)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Log()
-        {
-
         }
     }
  }

@@ -11,6 +11,14 @@ namespace ParserURL
     /// </summary>
     public class URLParser : IParser<IEnumerable<string>, List<URL>>
     {
+        private IValidator<string> validator;
+
+        public URLParser(IValidator<string> validator)
+        {
+            this.validator = validator;
+        }
+
+
         /// <summary>
         /// Returns a list of URL need to parse
         /// </summary>
@@ -93,13 +101,11 @@ namespace ParserURL
 
         private bool CheckURL(string url)
         {
-            Provider providers = new Provider();
+            Validator validators = new Validator();
 
-            URLProvider provider = new URLProvider();
+            validators.Add(this.validator);
 
-            providers.Add(provider);
-
-            return providers.Validate(url);
+            return validators.Validate(url);
         }
     }
 }

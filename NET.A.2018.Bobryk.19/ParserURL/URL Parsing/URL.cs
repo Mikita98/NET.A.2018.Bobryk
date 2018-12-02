@@ -10,7 +10,7 @@ namespace ParserURL
     /// <summary>
     /// Structure for saving url adresses
     /// </summary>
-    public class URL : IURL<string>
+    public class URL
     {
         public string HostName { get; set; }
 

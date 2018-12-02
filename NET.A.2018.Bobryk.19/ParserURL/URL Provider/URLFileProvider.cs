@@ -10,7 +10,7 @@ namespace ParserURL
     /// <summary>
     /// Read file with adresess
     /// </summary>
-    public class URLFileReader : IRepository<string>
+    public class URLFileProvider : IProvider<string>
     {
         private IEnumerable<string> elements { get; set; }
 
@@ -18,7 +18,7 @@ namespace ParserURL
         /// Constructor that recieve filepath for reading
         /// </summary>
         /// <param name="filepath"></param>
-        public URLFileReader(string filepath)
+        public URLFileProvider(string filepath)
         {
             ReadFile(filepath);
         }

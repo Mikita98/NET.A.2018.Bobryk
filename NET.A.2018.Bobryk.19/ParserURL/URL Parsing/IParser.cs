@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ParserURL
 {
-    public interface IParser<TSourse ,TResult>
+    public interface IParser<in TSourse, out TResult>
     {
         TResult Parse(TSourse sourse);
     }

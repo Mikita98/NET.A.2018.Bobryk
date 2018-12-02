@@ -9,16 +9,16 @@ namespace ParserURL
     /// <summary>
     /// Imlements composite pattern
     /// </summary>
-    public class Provider : IProvider
+    public class Validator : IValidator<string>
     {
-        private List<IProvider> children = new List<IProvider>();
+        private List<IValidator<string>> children = new List<IValidator<string>>();
 
-        public void Add(IProvider provider)
+        public void Add(IValidator<string> provider)
         {
             children.Add(provider);
         }
 
-        public void Remove(IProvider provider)
+        public void Remove(IValidator<string> provider)
         {
             children.Remove(provider);
         }
@@ -27,7 +27,7 @@ namespace ParserURL
         {
             bool result = true;
 
-            foreach (IProvider provider in children)
+            foreach (IValidator<string> provider in children)
             {
                 result = result || provider.Validate(path);
             }

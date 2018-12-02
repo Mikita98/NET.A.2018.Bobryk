@@ -10,8 +10,8 @@ namespace ParserURL
     /// Generic interface for serialization
     /// </summary>
     /// <typeparam name="U"></typeparam>
-    public interface ISerializer<U>
+    public interface ISerializer<in U>
     {
-        void Serialize(U data, string path);
+        void Serialize(U data);
     }
 }

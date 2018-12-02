@@ -9,12 +9,8 @@ namespace ParserURL
     /// <summary>
     /// Implements Composite pattern
     /// </summary>
-    public interface IProvider
+    public interface IValidator<in TSourse>
     {
-        void Add(IProvider provider);
-
-        void Remove(IProvider provider);
-
-        bool Validate(string adress);
+        bool Validate(TSourse adress);
     }
 }
