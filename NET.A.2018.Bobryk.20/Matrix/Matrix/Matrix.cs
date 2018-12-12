@@ -12,41 +12,10 @@ namespace Matrix
         /// <summary>
         /// size of columns and rows
         /// </summary>
-        public int Number { get; }
-
-        protected T[,] matrix { get; set; }
+        public int Number { get; protected set; }
 
         protected IValidator<T[,]> validator;
-
-        /// <summary>
-        /// Constructor that takes new size of matrix and validator
-        /// </summary>
-        /// <param name="number"></param>
-        /// <param name="validator"></param>
-        public Matrix(int number, IValidator<T[,]> validator)
-        {
-            CheckValidator(validator);
-
-            this.Number = number;
-            this.matrix = new T[Number, Number];
-            this.validator = validator;
-        }
-
-        /// <summary>
-        /// Constructor that takes new matrix and validator
-        /// </summary>
-        /// <param name="matrix"></param>
-        /// <param name="validator"></param>
-        public Matrix(T[,] matrixAnother, IValidator<T[,]> validator)
-        {
-            CheckValidator(validator);
-            this.validator = validator;
-            CheckMatrix(matrixAnother);
-
-            this.Number = (int)Math.Sqrt(matrixAnother.Length);
-            this.matrix = matrixAnother;
-        }
-
+        
         public event EventHandler<ChangingElementEventArgs> ChangeElement = delegate { };
 
         /// <summary>
@@ -55,24 +24,8 @@ namespace Matrix
         /// <param name="row"></param>
         /// <param name="col"></param>
         /// <returns></returns>
-        public T this[int row, int col]
-        {
-            get
-            {
-                this.CheckValue(row, col);
-
-                return this.matrix[row, col];
-            }
-
-            set
-            {
-                this.CheckValue(row, col);
-
-                this.InsertElement(row, col, value);
-
-                this.OnChangeElement(row, col);
-            }
-        }
+        public abstract T this[int row, int col]
+        { get; set; }
 
         protected virtual void OnChangeElement(int row, int col)
         {
@@ -81,31 +34,21 @@ namespace Matrix
             
         public abstract void InsertElement(int row, int col, T value);
 
-        private void CheckValue(int row, int col)
+        protected  void CheckValue(int row, int col)
         {
-            if (row < 0 || row > this.Number)
+            if (row > this.Number || row < 0)
             {
-                throw new ArgumentException("Number of rows is invalid");
+                throw new ArgumentException($"Value {row} must be between zero and {this.Number}!");
             }
 
-            if (col < 0 || col > this.Number)
+            if (col > this.Number || col < 0)
             {
-                throw new ArgumentException("Number of columns is invalid");
+                throw new ArgumentException($"Value {col} must be between zero and {this.Number}!");
             }
         }
 
-        protected void CheckMatrix(T[,] matrix)
-        {
-            if (matrix == null)
-            {
-                throw new ArgumentNullException("Matrix can't be null!");
-            }
 
-            if (!validator.Validate(matrix))
-            {
-                throw new ArgumentException("Matrix is invalid!");
-            }
-        }
+        public abstract void CheckMatrix();
 
         protected void CheckValidator(IValidator<T[,]> validator)
         {

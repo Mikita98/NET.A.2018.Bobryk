@@ -8,6 +8,6 @@ namespace Matrix.SumManager
 {
     public interface IMatrixAdder<T>
     {
-        T Sum(T value1, T value2);
+        Matrix<T> Sum(Matrix<T> value1, Matrix<T> value2);
     }
 }
